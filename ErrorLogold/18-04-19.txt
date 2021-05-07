@@ -1,0 +1,232 @@
+Time: 18/04/2019 09:32:27 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DavesCode.NewEngRunup.CommitRunupNew(GridView GridviewE, String LinacName, String tabby, String LogOffName, String TextBox, Boolean Valid, Boolean Fault, Boolean lock, String ConnectionString) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 264
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 52
+Source: App_Code
+TargetSite: System.String CommitRunupNew(System.Web.UI.WebControls.GridView, System.String, System.String, System.String, System.String, Boolean, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 18/04/2019 09:43:20 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DavesCode.NewEngRunup.CommitRunupNew(GridView GridviewE, String LinacName, String tabby, String LogOffName, String TextBox, Boolean Valid, Boolean Fault, Boolean lock, String ConnectionString) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 264
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 52
+Source: App_Code
+TargetSite: System.String CommitRunupNew(System.Web.UI.WebControls.GridView, System.String, System.String, System.String, System.String, Boolean, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 18/04/2019 09:46:03 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DavesCode.NewEngRunup.CommitRunupNew(GridView GridviewE, String LinacName, String tabby, String LogOffName, String TextBox, Boolean Valid, Boolean Fault, Boolean lock, String ConnectionString) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 264
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 52
+Source: App_Code
+TargetSite: System.String CommitRunupNew(System.Web.UI.WebControls.GridView, System.String, System.String, System.String, System.String, Boolean, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 18/04/2019 01:36:15 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 18/04/2019 02:39:32 PM
+-----------------------------------------------------------
+Message: Exception has been thrown by the target of an invocation.
+StackTrace:    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Web.UI.WebControls.ValidatorCompatibilityHelper.RegisterExpandoAttribute(Control control, String controlId, String attributeName, String attributeValue, Boolean encode)
+   at System.Web.UI.WebControls.BaseValidator.AddExpandoAttribute(Control control, HtmlTextWriter writer, String controlId, String attributeName, String attributeValue, Boolean encode)
+   at System.Web.UI.WebControls.BaseValidator.AddAttributesToRender(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.RequiredFieldValidator.AddAttributesToRender(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderBeginTag(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.BaseValidator.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.MultiView.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.UpdatePanel.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.UpdatePanel.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.UpdatePanel.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.UpdatePanel.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.UpdatePanel.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.UpdatePanel.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.UpdatePanel.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.UpdatePanel.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.UpdatePanel.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.UpdatePanel.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.PageRequestManager.RenderFormCallback(HtmlTextWriter writer, Control containerControl)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.HtmlFormWrapper.System.Web.UI.IHtmlForm.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.PageRequestManager.RenderPageCallback(HtmlTextWriter writer, Control pageControl)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E1page.aspx
+Exception Type: System.Reflection.TargetInvocationException
+-----------------------------------------------------------
+
+Time: 18/04/2019 04:36:05 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 18/04/2019 05:03:35 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 18/04/2019 05:05:09 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 18/04/2019 05:08:36 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+

@@ -1,0 +1,67 @@
+Time: 25/03/2019 10:23:27 AM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.StateManagedCollection.System.Collections.IList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.DataControlFieldCollection.get_Item(Int32 index)
+   at controls_ViewOpenFaultsuc.CloseTracking(String Linac) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\controls\ViewOpenFaultsuc.ascx.vb:line 357
+   at controls_ConcessionPopUpuc.CloseTracking(String LinacName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\controls\ConcessionPopUpuc.ascx.vb:line 19
+   at controls_FaultTrackinguc.CancelButton_Click(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\controls\FaultTrackinguc.ascx.vb:line 380
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /LA1page.aspx
+Exception Type: System.ArgumentOutOfRangeException
+-----------------------------------------------------------
+
+Time: 25/03/2019 11:13:35 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at controls_ViewOpenFaultsuc.FaultGridView_RowCommand(Object sender, GridViewCommandEventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\controls\ViewOpenFaultsuc.ascx.vb:line 405
+   at System.Web.UI.WebControls.GridView.OnRowCommand(GridViewCommandEventArgs e)
+   at System.Web.UI.WebControls.GridView.HandleEvent(EventArgs e, Boolean causesValidation, String validationGroup)
+   at System.Web.UI.WebControls.GridView.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.GridView.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /LA1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 25/03/2019 11:47:58 AM
+-----------------------------------------------------------
+Message: 
+StackTrace: 
+Source: 
+Exception Type: 
+-----------------------------------------------------------
+
+Time: 25/03/2019 04:38:42 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at controls_ViewOpenFaultsuc.CloseTracking(String Linac) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\controls\ViewOpenFaultsuc.ascx.vb:line 355
+   at controls_ConcessionPopUpuc.CloseTracking(String LinacName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\controls\ConcessionPopUpuc.ascx.vb:line 18
+   at controls_FaultTrackinguc.CancelButton_Click(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\controls\FaultTrackinguc.ascx.vb:line 383
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /LA1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 25/03/2019 04:42:40 PM
+-----------------------------------------------------------
+Message: 
+StackTrace: 
+Source: 
+Exception Type: 
+-----------------------------------------------------------
+

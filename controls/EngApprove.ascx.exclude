@@ -1,0 +1,176 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="EngApprove.ascx.vb" Inherits="controls_EngApprove" %>
+
+ <script type="text/javascript">
+                function CheckAllEmp(Checkbox) {
+                    var GridView1 = document.getElementById("<%=GridView1.ClientID %>");
+                    for (i = 1; i < GridView1.rows.length; i++) {
+                        if (GridView1.rows[i].cells[1].getElementsByTagName("RowlevelCheckBox")[0].enabled) {
+                            GridView1.rows[i].cells[1].getElementsByTagName("INPUT")[0].checked = Checkbox.checked;
+                        }
+                    }
+                }
+            </script>
+<asp:MultiView ID="MultiView1" runat="server">
+    <asp:View ID="LA" runat="server">
+        <asp:Panel ID="Panel100" runat="server" Width="150px"  BackColor="#99CCFF" BorderColor="#0033CC"
+            BorderStyle="Solid">
+            <%--           <asp:Label ID="lblError" runat="server" Text="" EnableViewState="False"></asp:Label>--%>
+            <asp:Table ID="Table1" runat="server" CellSpacing="20" GridLines="Both"
+               >
+                <asp:TableRow ID="r1" runat="server">
+                    <asp:TableCell ID="c1" runat="server"  HorizontalAlign="Left">
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+                            <Columns>
+
+                                <asp:BoundField DataField="Energy" HeaderText="Select All Energies"
+                                    SortExpression="Energy" />
+                                <asp:TemplateField>
+                                    <HeaderTemplate>
+                                        <asp:CheckBox ID="chkSelectAll"
+                                            runat="server"
+                                            AutoPostBack="true"
+                                            OnCheckedChanged="Checked" />
+                                    </HeaderTemplate>
+
+                                    <ItemTemplate>
+                                        <asp:CheckBox runat="server" ID="RowlevelCheckBox" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                    </asp:TableCell>
+                    <%--                  <asp:TableCell ID="c2" runat="server" Width="50px">
+                       
+                   <asp:Button ID="engHandoverButton" runat="server" Text="Approve Energies" causesvalidation="false"  Height="150px" BackColor="#FFCC00" />
+
+
+</asp:TableCell>
+                   <asp:TableCell ID="c3" runat="server" HorizontalAlign="left" Width="250px">
+                               <legend align="top" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold">Run-up Comments</legend>
+                             <asp:TextBox ID="CommentBox" runat="server" MaxLength="250" Rows="5" 
+                TextMode="multiline"  Width="100px" Height="100px" AutoPostBack="true"></asp:TextBox>
+
+                       </asp:TableCell>--%>
+                      
+                </asp:TableRow>
+            </asp:Table>
+        </asp:Panel>
+    </asp:View>
+    <asp:View ID="NewGen" runat="server">
+         <div>
+ 
+       <asp:Panel ID="Panel1" runat="server" BackColor="#99CCFF" BorderColor="#0033CC" 
+        BorderStyle="Solid">
+          <%-- <asp:Label ID="lblError" runat="server" Text="" EnableViewState="False"></asp:Label>--%>
+           
+        <asp:Table ID="Table2" runat="server" CellSpacing="20" GridLines="Both" 
+               Width="1500px">
+               <asp:TableRow ID="TableRow1" runat="server">
+                   <asp:TableCell ID="TableCell1" runat="server" Width="250px" HorizontalAlign="Left">
+                   <asp:GridView ID="GridView2" visible="false" runat="server" AutoGenerateColumns="False" >
+            <Columns>
+            
+                <asp:BoundField DataField="Energy" HeaderText="Select All Energies" 
+                    SortExpression="Energy" />
+                    <asp:TemplateField>  
+            <HeaderTemplate>  
+                <asp:CheckBox ID="chkSelectAll"   
+                    runat="server" 
+                    AutoPostBack="true"  
+                    OncheckedChanged="checked"
+                     />  
+            </HeaderTemplate>
+                    
+            <ItemTemplate>
+            <asp:CheckBox runat="server" ID="RowlevelCheckBox1" />
+            </ItemTemplate>
+            </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+               
+</asp:TableCell>
+                   <asp:TableCell ID="imagingcell" runat="server" Width =" 250px" HorizontalAlign="Left">
+                       <asp:GridView ID="GridViewImage" visible="false" runat="server" AutoGenerateColumns="False" >
+            <Columns>
+            
+                <asp:BoundField DataField="Energy" HeaderText="Select Imaging" 
+                    SortExpression="Energy" />
+                    <asp:TemplateField>  
+                             
+            <ItemTemplate>
+            <asp:CheckBox runat="server" ID="RowlevelCheckBoxImage" />
+
+            </ItemTemplate>
+                      </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+                   </asp:TableCell>
+                        
+
+  <%--                 
+                   <asp:TableCell ID="TableCell2" runat="server" Width="50px">
+                       
+                   <asp:Button ID="Button1" runat="server" Text="Approve Energies" causesvalidation="false"  Height="150px" BackColor="#FFCC00"/>
+
+
+</asp:TableCell>
+                   <asp:TableCell ID="TableCell3" runat="server" HorizontalAlign="left" Width="250px">
+                               <legend align="top" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold">Run-up Comments</legend>
+                             <asp:TextBox ID="TextBox1" runat="server" MaxLength="250" Rows="5" 
+                TextMode="multiline"  Width="100px" Height="100px" AutoPostBack="true"></asp:TextBox>
+
+                       </asp:TableCell>--%>
+                       
+                   </asp:TableRow>
+            </asp:Table>
+           </asp:Panel>
+             </div>
+    </asp:View>
+    <asp:View ID="Tomo" runat="server">
+               <asp:Panel ID="Panel2" runat="server" BackColor="#99CCFF" BorderColor="#0033CC" 
+        BorderStyle="Solid">
+<%--           <asp:Label ID="lblError" runat="server" Text="" EnableViewState="False"></asp:Label>--%>
+        <asp:Table ID="Table3" runat="server" CellSpacing="20" GridLines="Both" 
+               Width="1142px">
+               <%--<asp:TableRow ID="TableRow2" runat="server">
+                   <asp:TableCell ID="TableCell2" runat="server" Width="250px" HorizontalAlign="Left">
+                    <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" >
+            <Columns>
+            
+                <asp:BoundField DataField="Energy" HeaderText="Select All Energies" 
+                    SortExpression="Energy" />
+                    <asp:TemplateField>  
+            <HeaderTemplate>  
+                <asp:CheckBox ID="chkSelectAll"   
+                    runat="server" 
+                    AutoPostBack="true"  
+                    OncheckedChanged="Checked"
+                     />  
+            </HeaderTemplate>
+                    
+            <ItemTemplate>
+            <asp:CheckBox runat="server" ID="RowlevelCheckBox" />
+            </ItemTemplate>
+            </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+</asp:TableCell>--%>
+ <%--                  <asp:TableCell ID="c2" runat="server" Width="50px">
+                       
+                   <asp:Button ID="engHandoverButton" runat="server" Text="Approve Energies" causesvalidation="false"  Height="150px" BackColor="#FFCC00" />
+
+
+</asp:TableCell>
+                   <asp:TableCell ID="c3" runat="server" HorizontalAlign="left" Width="250px">
+                               <legend align="top" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold">Run-up Comments</legend>
+                             <asp:TextBox ID="CommentBox" runat="server" MaxLength="250" Rows="5" 
+                TextMode="multiline"  Width="100px" Height="100px" AutoPostBack="true"></asp:TextBox>
+
+                       </asp:TableCell>--%>
+                      
+                 <%--  </asp:TableRow>--%>
+                   </asp:Table>
+                   </asp:Panel>
+    </asp:View>
+
+</asp:MultiView>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/" title="Root"  description="Root">
+        <siteMapNode url="~/Default.aspx" title="Home"  description="Elf Home" />
+        <siteMapNode url="~/PhysicstrialEnergies.aspx" title="Physics Energies"  description="Physics Energy Authorisation" />
+        <siteMapNode url="~/Runup.aspx" title="Engineering Run up"  description="Engineering Run up" />
+        <siteMapNode url="~/Clinical Acceptance.aspx" title="Pre-Clinical Acceptance"  description="Clinical Acceptance" />
+        <siteMapNode url="~/RadiographerPage.aspx" title="Clinical"  description="RadiographerPage" />
+        <siteMapNode url="~/faultPage.aspx" title="Report Fault"  description="Report Fault" />
+        <siteMapNode url="~/FaultTracker.aspx" title="Track Fault"  description="Track Fault" />
+        <siteMapNode url="~/LinacStatusScreen.aspx" title="Linac Status"  description="Linac Status" />
+        <siteMapNode url="~/PlannedMaintenance.aspx" title="Planned Maintenance"  description="Planned Maintenance" />
+        <siteMapNode url="~/Repair.aspx" title="Repair"  description="Repair" />
+        <!--<siteMapNode url="~/Physicstrialenergies.aspx" title="tab"  description="tab" />-->
+    </siteMapNode>
+</siteMap>

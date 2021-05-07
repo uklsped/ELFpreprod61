@@ -1,0 +1,29 @@
+Time: 08/04/2019 11:58:29 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Repairuc.UserApprovedEvent(String Tabused, String Userinfo) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\Repairuc.ascx.vb:line 185
+   at E1page.EndofDayElf(String Caller) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\E1page.aspx.vb:line 1271
+   at E1page.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\E1page.aspx.vb:line 257
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 08/04/2019 12:01:34 PM
+-----------------------------------------------------------
+Message: 
+StackTrace: 
+Source: 
+Exception Type: 
+-----------------------------------------------------------
+
+Time: 08/04/2019 12:47:06 PM
+-----------------------------------------------------------
+Message: 
+StackTrace: 
+Source: 
+Exception Type: 
+-----------------------------------------------------------
+

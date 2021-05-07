@@ -1,0 +1,39 @@
+Time: 30/06/2020 02:28:06 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.NewEngRunup.CommitRunupNew(GridView GridviewE, String LinacName, String tabby, String LogOffName, String TextBox, Boolean Valid, Boolean Fault, Boolean lock, String ConnectionString) in D:\Inetpub\wwwrootv4\elfv6preprod\App_Code\NewEngRunup.vb:line 277
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in D:\Inetpub\wwwrootv4\elfv6preprod\App_Code\NewEngRunup.vb:line 47
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 30/06/2020 05:48:43 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'ASP.acceptlinac_ascx' to type 'AcceptLinac'.
+StackTrace:    at Preclinusercontrol.Page_Init(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnInit(EventArgs e)
+   at System.Web.UI.UserControl.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at AjaxControlToolkit.TabPanel.OnInit(EventArgs e) in C:\Users\Stephen\Documents\Repos\Superexpert\AjaxControlToolkit\Server\AjaxControlToolkit\Tabs\TabPanel.cs:line 185
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/T1page.aspx
+Exception Type: System.InvalidCastException
+-----------------------------------------------------------
+

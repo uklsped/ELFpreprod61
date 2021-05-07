@@ -1,0 +1,148 @@
+Time: 15/02/2019 01:24:17 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'IncidentID'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.GridView.DataBind()
+   at ManyFaultGriduc.BindGridViewVEF() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\ManyFaultGriduc.ascx.vb:line 54
+   at ManyFaultGriduc.BindGridViewManyFault() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\ManyFaultGriduc.ascx.vb:line 34
+   at ManyFaultGriduc.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\ManyFaultGriduc.ascx.vb:line 22
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at ViewOpenFaults.FaultGridView_RowCommand(Object sender, GridViewCommandEventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\ViewOpenFaults.ascx.vb:line 437
+   at System.Web.UI.WebControls.GridView.OnRowCommand(GridViewCommandEventArgs e)
+   at System.Web.UI.WebControls.GridView.HandleEvent(EventArgs e, Boolean causesValidation, String validationGroup)
+   at System.Web.UI.WebControls.GridView.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.GridView.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /testviewfaults.aspx
+Exception Type: System.Web.HttpException
+-----------------------------------------------------------
+
+Time: 15/02/2019 01:28:04 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 15/02/2019 01:37:57 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at controls_FaultTrackinguc.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\controls\FaultTrackinguc.ascx.vb:line 69
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E2page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 15/02/2019 01:39:33 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 15/02/2019 01:44:49 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 15/02/2019 02:00:04 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 15/02/2019 02:03:53 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 15/02/2019 02:10:16 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at controls_FaultTrackinguc.CreateConcessParams(String UserInfo) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\controls\FaultTrackinguc.ascx.vb:line 348
+   at controls_FaultTrackinguc.UserApprovedEvent(String Tabused, String Userinfo) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\controls\FaultTrackinguc.ascx.vb:line 234
+   at WriteDatauc.btnchkcancel_click(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\WriteDatauc.ascx.vb:line 121
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /Trialfaulttracking.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 15/02/2019 02:36:36 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+

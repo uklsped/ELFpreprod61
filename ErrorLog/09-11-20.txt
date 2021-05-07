@@ -1,0 +1,55 @@
+Time: 09/11/2020 03:04:37 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ErunupUserControl.UserApprovedEvent(String Tabset, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\ErunupUserControlCommon.ascx.vb:line 136
+   at WriteDatauc.AcceptOK_click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\WriteDatauc.ascx.vb:line 135
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/T3page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 09/11/2020 03:14:31 PM
+-----------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: key
+StackTrace:    at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at DavesCode.Reuse.GetRole(String user) in D:\Inetpub\wwwrootv4\elfv6preprod\App_Code\Reuse.vb:line 262
+   at DefectSavePark.NewWriteRadReset(String UserInfo, String ConcessionNumber) in D:\Inetpub\wwwrootv4\elfv6preprod\DefectSavePark.ascx.vb:line 319
+   at DefectSavePark.UserApprovedEvent(String Tabused, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\DefectSavePark.ascx.vb:line 72
+   at WriteDatauc.btnchkcancel_click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\WriteDatauc.ascx.vb:line 83
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/T3page.aspx
+Exception Type: System.ArgumentNullException
+-----------------------------------------------------------
+
+Time: 09/11/2020 03:16:56 PM
+-----------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: key
+StackTrace:    at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at DavesCode.Reuse.GetRole(String user) in D:\Inetpub\wwwrootv4\elfv6preprod\App_Code\Reuse.vb:line 262
+   at DefectSavePark.NewWriteRadReset(String UserInfo, String ConcessionNumber) in D:\Inetpub\wwwrootv4\elfv6preprod\DefectSavePark.ascx.vb:line 319
+   at DefectSavePark.UserApprovedEvent(String Tabused, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\DefectSavePark.ascx.vb:line 72
+   at WriteDatauc.btnchkcancel_click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\WriteDatauc.ascx.vb:line 83
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/T3page.aspx
+Exception Type: System.ArgumentNullException
+-----------------------------------------------------------
+

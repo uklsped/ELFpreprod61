@@ -1,0 +1,159 @@
+Time: 22/02/2019 09:08:56 AM
+-----------------------------------------------------------
+Message: The control with ID 'UpdatePanel1' requires a ScriptManager on the page. The ScriptManager must appear before any controls that need it.
+StackTrace:    at System.Web.UI.UpdatePanel.get_ScriptManager()
+   at System.Web.UI.UpdatePanel.RegisterPanel()
+   at System.Web.UI.UpdatePanel.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /justwritenomaster.aspx
+Exception Type: System.InvalidOperationException
+-----------------------------------------------------------
+
+Time: 22/02/2019 09:08:58 AM
+-----------------------------------------------------------
+Message: The control with ID 'UpdatePanel1' requires a ScriptManager on the page. The ScriptManager must appear before any controls that need it.
+StackTrace:    at System.Web.UI.UpdatePanel.get_ScriptManager()
+   at System.Web.UI.UpdatePanel.RegisterPanel()
+   at System.Web.UI.UpdatePanel.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /justwritenomaster.aspx
+Exception Type: System.InvalidOperationException
+-----------------------------------------------------------
+
+Time: 22/02/2019 09:09:02 AM
+-----------------------------------------------------------
+Message: The control with ID 'UpdatePanel1' requires a ScriptManager on the page. The ScriptManager must appear before any controls that need it.
+StackTrace:    at System.Web.UI.UpdatePanel.get_ScriptManager()
+   at System.Web.UI.UpdatePanel.RegisterPanel()
+   at System.Web.UI.UpdatePanel.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /justwritenomaster.aspx
+Exception Type: System.InvalidOperationException
+-----------------------------------------------------------
+
+Time: 22/02/2019 10:17:42 AM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 22/02/2019 10:42:50 AM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 22/02/2019 10:51:15 AM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 22/02/2019 11:02:25 AM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 22/02/2019 11:05:06 AM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 22/02/2019 11:29:42 AM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 22/02/2019 03:11:00 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 22/02/2019 03:13:36 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 22/02/2019 04:34:16 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\Reuse.vb:line 3003
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewEngRunup.vb:line 45
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+

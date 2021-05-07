@@ -1,0 +1,53 @@
+Time: 15/04/2019 11:04:55 AM
+-----------------------------------------------------------
+Message: 
+StackTrace: 
+Source: 
+Exception Type: 
+-----------------------------------------------------------
+
+Time: 15/04/2019 11:11:40 AM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.EventArgs' to type 'System.Web.UI.WebControls.GridViewPageEventArgs'.
+StackTrace:    at ManyFaultGriduc._Lambda$__1(Object a0, EventArgs a1) in C:\Users\david.spendley\AppData\Local\Temp\Temporary ASP.NET Files\vs\b7123898\5b6ba4df\App_Web_manyfaultgriduc.ascx.cdcab7d2.gfzn_vee.0.vb:line 0
+   at System.Web.UI.WebControls.GridView.OnPageIndexChanged(EventArgs e)
+   at System.Web.UI.WebControls.GridView.HandlePage(Int32 newPage)
+   at System.Web.UI.WebControls.GridView.HandleEvent(EventArgs e, Boolean causesValidation, String validationGroup)
+   at System.Web.UI.WebControls.GridView.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.GridView.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /T1page.aspx
+Exception Type: System.InvalidCastException
+-----------------------------------------------------------
+
+Time: 15/04/2019 11:12:37 AM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.EventArgs' to type 'System.Web.UI.WebControls.GridViewPageEventArgs'.
+StackTrace:    at ManyFaultGriduc._Lambda$__1(Object a0, EventArgs a1) in C:\Users\david.spendley\AppData\Local\Temp\Temporary ASP.NET Files\vs\b7123898\5b6ba4df\App_Web_manyfaultgriduc.ascx.cdcab7d2.gfzn_vee.0.vb:line 0
+   at System.Web.UI.WebControls.GridView.OnPageIndexChanged(EventArgs e)
+   at System.Web.UI.WebControls.GridView.HandlePage(Int32 newPage)
+   at System.Web.UI.WebControls.GridView.HandleEvent(EventArgs e, Boolean causesValidation, String validationGroup)
+   at System.Web.UI.WebControls.GridView.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.GridView.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /T1page.aspx
+Exception Type: System.InvalidCastException
+-----------------------------------------------------------
+
+Time: 15/04/2019 03:15:13 PM
+-----------------------------------------------------------
+Message: The SqlParameterCollection only accepts non-null SqlParameter type objects, not String objects.
+StackTrace:    at System.Data.SqlClient.SqlParameterCollection.ValidateType(Object value)
+   at System.Data.SqlClient.SqlParameterCollection.Add(Object value)
+   at ClinicalUserControl.BindRunUpComments(String connectionString) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\ClinicalUserControl.ascx.vb:line 320
+   at ClinicalUserControl.ClinicalApprovedEvent(String connectionString) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\ClinicalUserControl.ascx.vb:line 157
+   at AcceptLinac.ClinicalApprovedEventHandler.Invoke(String connectionString)
+   at AcceptLinac.AcceptOK_click(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\AcceptLinac.ascx.vb:line 117
+Source: System.Data
+TargetSite: Void ValidateType(System.Object)
+-----------------------------------------------------------
+

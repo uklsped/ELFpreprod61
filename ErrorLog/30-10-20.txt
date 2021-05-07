@@ -1,0 +1,27 @@
+Time: 30/10/2020 04:42:47 PM
+-----------------------------------------------------------
+Message: Conversion from type 'DBNull' to type 'Boolean' is not valid.
+StackTrace:    at Microsoft.VisualBasic.CompilerServices.Conversions.ToBoolean(Object Value)
+   at DavesCode.GetApplication.GetApplicationState(String linac, Int32 PreviousState) in D:\Inetpub\wwwrootv4\elfv6preprod\App_Code\GetApplication.vb:line 33
+Source: Microsoft.VisualBasic
+TargetSite: Boolean ToBoolean(System.Object)
+-----------------------------------------------------------
+
+Time: 30/10/2020 04:44:09 PM
+-----------------------------------------------------------
+Message: Conversion from type 'DBNull' to type 'Boolean' is not valid.
+StackTrace:    at Microsoft.VisualBasic.CompilerServices.Conversions.ToBoolean(Object Value)
+   at DavesCode.GetApplication.GetApplicationState(String linac, Int32 PreviousState) in D:\Inetpub\wwwrootv4\elfv6preprod\App_Code\GetApplication.vb:line 33
+Source: Microsoft.VisualBasic
+TargetSite: Boolean ToBoolean(System.Object)
+-----------------------------------------------------------
+
+Time: 30/10/2020 05:12:24 PM
+-----------------------------------------------------------
+Message: Conversion from type 'DBNull' to type 'Boolean' is not valid.
+StackTrace:    at Microsoft.VisualBasic.CompilerServices.Conversions.ToBoolean(Object Value)
+   at DavesCode.GetApplication.GetApplicationState(String linac, Int32 PreviousState) in D:\Inetpub\wwwrootv4\elfv6preprod\App_Code\GetApplication.vb:line 33
+Source: Microsoft.VisualBasic
+TargetSite: Boolean ToBoolean(System.Object)
+-----------------------------------------------------------
+

@@ -1,0 +1,157 @@
+Time: 20/03/2019 09:18:52 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at LA1page.EndofDayElf(String Caller) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\LA1page.aspx.vb:line 1244
+   at LA1page.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\LA1page.aspx.vb:line 257
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /LA1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 20/03/2019 09:35:31 AM
+-----------------------------------------------------------
+Message: The parameterized query '(@Tab int,@LogInDate datetime,@LogOutDate datetime,@LogInName nv' expects the parameter '@Comment', which was not supplied.
+StackTrace:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DavesCode.NewWriteAux.WriteAuxTablesNew(String LinacName, String LogOffName, String comment, Int32 Radioselect, Int32 Tabused, Boolean Fault, String suspstate, String repstate, Boolean lock, String connectionString) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewWriteAux.vb:line 112
+   at DavesCode.NewWriteAux.WriteAuxTables(String LinacName, String LogOffName, String comment, Int32 Radioselect, Int32 Tabused, Boolean Fault, String suspstate, String repstate, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewWriteAux.vb:line 10
+Source: .Net SqlClient Data Provider
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])
+-----------------------------------------------------------
+
+Time: 20/03/2019 09:39:21 AM
+-----------------------------------------------------------
+Message: The parameterized query '(@Tab int,@LogInDate datetime,@LogOutDate datetime,@LogInName nv' expects the parameter '@Comment', which was not supplied.
+StackTrace:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DavesCode.NewWriteAux.WriteAuxTablesNew(String LinacName, String LogOffName, String comment, Int32 Radioselect, Int32 Tabused, Boolean Fault, String suspstate, String repstate, Boolean lock, String connectionString) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewWriteAux.vb:line 112
+   at DavesCode.NewWriteAux.WriteAuxTables(String LinacName, String LogOffName, String comment, Int32 Radioselect, Int32 Tabused, Boolean Fault, String suspstate, String repstate, Boolean lock, FaultParameters FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewWriteAux.vb:line 10
+Source: .Net SqlClient Data Provider
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])
+-----------------------------------------------------------
+
+Time: 20/03/2019 09:45:04 AM
+-----------------------------------------------------------
+Message: The file '/ReportFaultPopUpuc1' does not exist.
+StackTrace:    at System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.UI.TemplateControl.LoadControl(VirtualPath virtualPath)
+   at System.Web.UI.TemplateControl.LoadControl(String virtualPath)
+   at Planned_Maintenanceuc.ReportFaultButton_Click(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\PlannedMaintenanceuc.ascx.vb:line 534
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /LA1page.aspx
+Exception Type: System.Web.HttpException
+-----------------------------------------------------------
+
+Time: 20/03/2019 12:00:39 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at LA1page.WriteRecovery() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\LA1page.aspx.vb:line 1439
+   at LA1page.LaunchTab() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\LA1page.aspx.vb:line 585
+   at LA1page.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\LA1page.aspx.vb:line 361
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /LA1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 20/03/2019 12:01:30 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at LA1page.WriteRecovery() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\LA1page.aspx.vb:line 1439
+   at LA1page.LaunchTab() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\LA1page.aspx.vb:line 585
+   at LA1page.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\LA1page.aspx.vb:line 361
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /LA1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 20/03/2019 01:17:26 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.GridViewRowCollection.get_Item(Int32 index)
+   at ManyFaultGriduc.NewFaultGridView_RowCommand(Object sender, GridViewCommandEventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\ManyFaultGriduc.ascx.vb:line 178
+   at System.Web.UI.WebControls.GridView.OnRowCommand(GridViewCommandEventArgs e)
+   at System.Web.UI.WebControls.GridView.HandleEvent(EventArgs e, Boolean causesValidation, String validationGroup)
+   at System.Web.UI.WebControls.GridView.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.GridView.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /LA1page.aspx
+Exception Type: System.ArgumentOutOfRangeException
+-----------------------------------------------------------
+
+Time: 20/03/2019 03:23:55 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ManyFaultGriduc.CheckEmptyGrid(GridView grid) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\ManyFaultGriduc.ascx.vb:line 131
+   at ManyFaultGriduc.BindDefectData() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\ManyFaultGriduc.ascx.vb:line 123
+   at ManyFaultGriduc.BindGridManyRepeat() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\ManyFaultGriduc.ascx.vb:line 40
+   at ManyFaultGriduc.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\ManyFaultGriduc.ascx.vb:line 23
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /LA1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 20/03/2019 03:26:18 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DefectSave.CreateFaultParams(String UserInfo, FaultParameters& FaultParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 517
+   at DefectSave.NewWriteradreset(String UserInfo, String connectionString) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 405
+   at DefectSave.UserApprovedEvent(String Tabused, String Userinfo) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 72
+   at DefectSave.SaveDefectButton_Click(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 114
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /LA1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+

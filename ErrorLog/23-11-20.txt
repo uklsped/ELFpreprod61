@@ -1,0 +1,75 @@
+Time: 23/11/2020 11:47:46 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ClinicalUserControl.UserApprovedEvent(String TabSet, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\ClinicalUserControl.ascx.vb:line 158
+   at WriteDatauc.AcceptOK_click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\WriteDatauc.ascx.vb:line 135
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/B1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 23/11/2020 11:47:58 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ClinicalUserControl.UserApprovedEvent(String TabSet, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\ClinicalUserControl.ascx.vb:line 158
+   at WriteDatauc.AcceptOK_click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\WriteDatauc.ascx.vb:line 135
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/B1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 23/11/2020 11:48:30 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ClinicalUserControl.UserApprovedEvent(String TabSet, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\ClinicalUserControl.ascx.vb:line 158
+   at WriteDatauc.AcceptOK_click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\WriteDatauc.ascx.vb:line 135
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/B1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 23/11/2020 11:49:35 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ClinicalUserControl.UserApprovedEvent(String TabSet, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\ClinicalUserControl.ascx.vb:line 158
+   at WriteDatauc.AcceptOK_click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\WriteDatauc.ascx.vb:line 135
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/B1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 23/11/2020 11:50:54 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ClinicalUserControl.UserApprovedEvent(String TabSet, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\ClinicalUserControl.ascx.vb:line 158
+   at WriteDatauc.AcceptOK_click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\WriteDatauc.ascx.vb:line 135
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/B1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+

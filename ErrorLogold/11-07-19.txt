@@ -1,0 +1,18 @@
+Time: 11/07/2019 11:40:16 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at controls_FaultTrackinguc.SetupStatusTech(String incidentID) in C:\EastbourneSimpleSolution\EastbourneSimple\controls\FaultTrackinguc.ascx.vb:line 89
+   at controls_FaultTrackinguc.InitialiseFaultTracking(ConcessionParameters ConcessObject) in C:\EastbourneSimpleSolution\EastbourneSimple\controls\FaultTrackinguc.ascx.vb:line 57
+   at controls_ConcessionPopUpuc.SetUpFaultTracking() in C:\EastbourneSimpleSolution\EastbourneSimple\controls\ConcessionPopUpuc.ascx.vb:line 53
+   at controls_ViewOpenFaultsuc.FaultGridView_RowCommand(Object sender, GridViewCommandEventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\controls\ViewOpenFaultsuc.ascx.vb:line 197
+   at System.Web.UI.WebControls.GridView.OnRowCommand(GridViewCommandEventArgs e)
+   at System.Web.UI.WebControls.GridView.HandleEvent(EventArgs e, Boolean causesValidation, String validationGroup)
+   at System.Web.UI.WebControls.GridView.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.GridView.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+

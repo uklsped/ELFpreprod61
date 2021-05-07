@@ -1,0 +1,30 @@
+﻿<%@ Master Language="VB" CodeFile="Elf.master.vb" Inherits="Elf" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>ELF</title>
+  
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    </head>
+    <body>
+
+    <form id="form1" runat="server" autocomplete="off">
+<asp:ToolkitScriptManager ID="ToolkitScriptManager1" CombineScripts ="true" EnablePageMethods="true" runat="server" EnablePartialRendering="true"></asp:ToolkitScriptManager>
+            
+          
+    <div >
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </div>
+     
+    </form>
+</body>
+</html>

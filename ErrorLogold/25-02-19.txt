@@ -1,0 +1,194 @@
+Time: 25/02/2019 11:37:16 AM
+-----------------------------------------------------------
+Message: 
+StackTrace: 
+Source: 
+Exception Type: 
+-----------------------------------------------------------
+
+Time: 25/02/2019 11:37:57 AM
+-----------------------------------------------------------
+Message: Object variable or With block variable not set.
+StackTrace:    at Microsoft.VisualBasic.CompilerServices.Symbols.Container..ctor(Object Instance)
+   at Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   at DefectSave.CheckEmptyGrid(GridView grid) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 223
+   at DefectSave.BindDefectData() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 208
+   at DefectSave.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 145
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E2page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 25/02/2019 11:38:05 AM
+-----------------------------------------------------------
+Message: Object variable or With block variable not set.
+StackTrace:    at Microsoft.VisualBasic.CompilerServices.Symbols.Container..ctor(Object Instance)
+   at Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   at DefectSave.CheckEmptyGrid(GridView grid) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 223
+   at DefectSave.BindDefectData() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 208
+   at DefectSave.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 145
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E2page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 25/02/2019 11:38:13 AM
+-----------------------------------------------------------
+Message: Object variable or With block variable not set.
+StackTrace:    at Microsoft.VisualBasic.CompilerServices.Symbols.Container..ctor(Object Instance)
+   at Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   at DefectSave.CheckEmptyGrid(GridView grid) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 223
+   at DefectSave.BindDefectData() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 208
+   at DefectSave.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 145
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E2page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 25/02/2019 11:38:18 AM
+-----------------------------------------------------------
+Message: Object variable or With block variable not set.
+StackTrace:    at Microsoft.VisualBasic.CompilerServices.Symbols.Container..ctor(Object Instance)
+   at Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   at DefectSave.CheckEmptyGrid(GridView grid) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 223
+   at DefectSave.BindDefectData() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 208
+   at DefectSave.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 145
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E2page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 25/02/2019 11:38:22 AM
+-----------------------------------------------------------
+Message: Object variable or With block variable not set.
+StackTrace:    at Microsoft.VisualBasic.CompilerServices.Symbols.Container..ctor(Object Instance)
+   at Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   at DefectSave.CheckEmptyGrid(GridView grid) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 223
+   at DefectSave.BindDefectData() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 208
+   at DefectSave.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 145
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E2page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 25/02/2019 11:38:26 AM
+-----------------------------------------------------------
+Message: Object variable or With block variable not set.
+StackTrace:    at Microsoft.VisualBasic.CompilerServices.Symbols.Container..ctor(Object Instance)
+   at Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(Object Instance, Type Type, String MemberName, Object[] Arguments, String[] ArgumentNames, Type[] TypeArguments, Boolean[] CopyBack)
+   at DefectSave.CheckEmptyGrid(GridView grid) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 223
+   at DefectSave.BindDefectData() in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 208
+   at DefectSave.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\DefectSave.ascx.vb:line 145
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E2page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+

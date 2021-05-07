@@ -1,0 +1,63 @@
+﻿.mytabstyle .ajax__tab_header {
+    font-family:verdana,tahoma,helvetica;
+    font-size:11px;
+    background:
+        url(../Images/tab-line.gif) 
+        repeat-x 
+        bottom;
+}
+.mytabstyle .ajax__tab_outer {
+    padding-right:4px;
+    background:
+        url(../Images/tab-right.gif) 
+        no-repeat 
+        right;
+    height:21px;
+}
+.mytabstyle .ajax__tab_inner {
+    padding-left:3px;
+    background:
+        url(../Images/tab-left.gif) 
+        no-repeat;
+}
+.mytabstyle .ajax__tab_tab {
+    height:13px;
+    padding:4px;
+    margin:0;
+    background:
+        url(../Images/backg.jpg) 
+        repeat-x;
+}
+.mytabstyle .ajax__tab_hover .ajax__tab_outer {
+    background:
+        url(../Images/tab-hover-right.gif) 
+        no-repeat 
+        right;
+}
+.mytabstyle .ajax__tab_hover .ajax__tab_inner {
+    background:
+        url(../Images/tab-hover-left.gif) 
+        no-repeat;
+}
+.mytabstyle .ajax__tab_hover .ajax__tab_tab {
+    background:
+        url(../Images/tab-hover.gif) 
+        repeat-x;
+}
+.mytabstyle .ajax__tab_active .ajax__tab_outer {
+    background:
+        url(../Images/tab-active-right.gif) 
+        no-repeat 
+        right;
+}
+.mytabstyle .ajax__tab_active .ajax__tab_inner {
+    background:
+        url(../Images/tab-active-left.gif)
+        no-repeat;
+}
+.mytabstyle .ajax__tab_active .ajax__tab_tab {
+
+    background:
+        url(../Images/tab-active.gif)
+        repeat-x;
+}

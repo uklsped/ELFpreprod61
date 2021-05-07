@@ -1,0 +1,54 @@
+Time: 18/11/2020 03:57:16 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DavesCode.Reuse.SetMachineState(String linacName, Boolean unlock, Boolean LoggedOn, String ConnectionString) in D:\Inetpub\wwwrootv4\elfv6preprod\App_Code\Reuse.vb:line 335
+   at B1page.LaunchTab(String TabAction, String LiveTab) in D:\Inetpub\wwwrootv4\elfv6preprod\B1page.aspx.vb:line 492
+Source: App_Code
+TargetSite: System.String SetMachineState(System.String, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 18/11/2020 04:00:59 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ErunupUserControl.UserApprovedEvent(String Tabset, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\ErunupUserControlCommon.ascx.vb:line 136
+   at WriteDatauc.AcceptOK_click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\WriteDatauc.ascx.vb:line 135
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/B1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 18/11/2020 04:05:01 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ErunupUserControl.UserApprovedEvent(String Tabset, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\ErunupUserControlCommon.ascx.vb:line 136
+   at WriteDatauc.AcceptOK_click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\WriteDatauc.ascx.vb:line 135
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/B1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 18/11/2020 04:57:15 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ErunupUserControl.UserApprovedEvent(String Tabset, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\ErunupUserControlCommon.ascx.vb:line 136
+   at WriteDatauc.AcceptOK_click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\WriteDatauc.ascx.vb:line 135
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/B1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+

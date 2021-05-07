@@ -1,0 +1,39 @@
+Time: 28/02/2020 10:51:27 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at T2page.WriteRecovery() in D:\Inetpub\wwwrootv4\elfv6preprod\T2page.aspx.vb:line 1347
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+
+Time: 28/02/2020 10:51:35 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at T2page.WriteRecovery() in D:\Inetpub\wwwrootv4\elfv6preprod\T2page.aspx.vb:line 1347
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+
+Time: 28/02/2020 12:11:22 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at T2page.WriteRecovery() in D:\Inetpub\wwwrootv4\elfv6preprod\T2page.aspx.vb:line 1347
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

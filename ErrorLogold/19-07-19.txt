@@ -1,0 +1,349 @@
+Time: 19/07/2019 09:12:49 AM
+-----------------------------------------------------------
+Message: 
+StackTrace: 
+Source: 
+Exception Type: 
+-----------------------------------------------------------
+
+Time: 19/07/2019 09:28:00 AM
+-----------------------------------------------------------
+Message: 
+StackTrace: 
+Source: 
+Exception Type: 
+-----------------------------------------------------------
+
+Time: 19/07/2019 09:29:36 AM
+-----------------------------------------------------------
+Message: 
+StackTrace: 
+Source: 
+Exception Type: 
+-----------------------------------------------------------
+
+Time: 19/07/2019 09:30:06 AM
+-----------------------------------------------------------
+Message: Format of the initialization string does not conform to specification starting at index 0.
+StackTrace:    at System.Data.Common.DbConnectionOptions.GetKeyValuePair(String connectionString, Int32 currentPosition, StringBuilder buffer, Boolean useOdbcRules, String& keyname, String& keyvalue)
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Web.UI.WebControls.SqlDataSource.CreateConnection(String connectionString)
+   at System.Web.UI.WebControls.SqlDataSourceView.ExecuteSelect(DataSourceSelectArguments arguments)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.GridView.DataBind()
+   at controls_ModalityDisplayuc.BindEnergyDataClinical() in C:\EastbourneSimpleSolution\EastbourneSimple\controls\ModalityDisplayuc.ascx.vb:line 57
+   at controls_ModalityDisplayuc.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\controls\ModalityDisplayuc.ascx.vb:line 37
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.ArgumentException
+-----------------------------------------------------------
+
+Time: 19/07/2019 09:30:36 AM
+-----------------------------------------------------------
+Message: Format of the initialization string does not conform to specification starting at index 0.
+StackTrace:    at System.Data.Common.DbConnectionOptions.GetKeyValuePair(String connectionString, Int32 currentPosition, StringBuilder buffer, Boolean useOdbcRules, String& keyname, String& keyvalue)
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Web.UI.WebControls.SqlDataSource.CreateConnection(String connectionString)
+   at System.Web.UI.WebControls.SqlDataSourceView.ExecuteSelect(DataSourceSelectArguments arguments)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.GridView.DataBind()
+   at controls_ModalityDisplayuc.BindEnergyDataClinical() in C:\EastbourneSimpleSolution\EastbourneSimple\controls\ModalityDisplayuc.ascx.vb:line 57
+   at controls_ModalityDisplayuc.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\controls\ModalityDisplayuc.ascx.vb:line 37
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.ArgumentException
+-----------------------------------------------------------
+
+Time: 19/07/2019 09:43:06 AM
+-----------------------------------------------------------
+Message: Format of the initialization string does not conform to specification starting at index 0.
+StackTrace:    at System.Data.Common.DbConnectionOptions.GetKeyValuePair(String connectionString, Int32 currentPosition, StringBuilder buffer, Boolean useOdbcRules, String& keyname, String& keyvalue)
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Web.UI.WebControls.SqlDataSource.CreateConnection(String connectionString)
+   at System.Web.UI.WebControls.SqlDataSourceView.ExecuteSelect(DataSourceSelectArguments arguments)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.GridView.DataBind()
+   at controls_ModalityDisplayuc.BindEnergyDataClinical() in C:\EastbourneSimpleSolution\EastbourneSimple\controls\ModalityDisplayuc.ascx.vb:line 57
+   at controls_ModalityDisplayuc.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\controls\ModalityDisplayuc.ascx.vb:line 37
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.ArgumentException
+-----------------------------------------------------------
+
+Time: 19/07/2019 09:43:38 AM
+-----------------------------------------------------------
+Message: Format of the initialization string does not conform to specification starting at index 0.
+StackTrace:    at System.Data.Common.DbConnectionOptions.GetKeyValuePair(String connectionString, Int32 currentPosition, StringBuilder buffer, Boolean useOdbcRules, String& keyname, String& keyvalue)
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Web.UI.WebControls.SqlDataSource.CreateConnection(String connectionString)
+   at System.Web.UI.WebControls.SqlDataSourceView.ExecuteSelect(DataSourceSelectArguments arguments)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.GridView.DataBind()
+   at controls_ModalityDisplayuc.BindEnergyDataClinical() in C:\EastbourneSimpleSolution\EastbourneSimple\controls\ModalityDisplayuc.ascx.vb:line 57
+   at controls_ModalityDisplayuc.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\controls\ModalityDisplayuc.ascx.vb:line 37
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.ArgumentException
+-----------------------------------------------------------
+
+Time: 19/07/2019 09:44:06 AM
+-----------------------------------------------------------
+Message: Format of the initialization string does not conform to specification starting at index 0.
+StackTrace:    at System.Data.Common.DbConnectionOptions.GetKeyValuePair(String connectionString, Int32 currentPosition, StringBuilder buffer, Boolean useOdbcRules, String& keyname, String& keyvalue)
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Web.UI.WebControls.SqlDataSource.CreateConnection(String connectionString)
+   at System.Web.UI.WebControls.SqlDataSourceView.ExecuteSelect(DataSourceSelectArguments arguments)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.GridView.DataBind()
+   at controls_ModalityDisplayuc.BindEnergyDataClinical() in C:\EastbourneSimpleSolution\EastbourneSimple\controls\ModalityDisplayuc.ascx.vb:line 57
+   at controls_ModalityDisplayuc.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\controls\ModalityDisplayuc.ascx.vb:line 37
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.ArgumentException
+-----------------------------------------------------------
+
+Time: 19/07/2019 01:31:11 PM
+-----------------------------------------------------------
+Message: Method 'ASP.la1page_aspx.SetModalities' not found.
+StackTrace:    at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at AcceptLinac.AcceptOK_click(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\AcceptLinac.ascx.vb:line 127
+Source: mscorlib
+TargetSite: System.Object InvokeMember(System.String, System.Reflection.BindingFlags, System.Reflection.Binder, System.Object, System.Object[], System.Reflection.ParameterModifier[], System.Globalization.CultureInfo, System.String[])
+-----------------------------------------------------------
+
+Time: 19/07/2019 01:31:25 PM
+-----------------------------------------------------------
+Message: Method 'ASP.la1page_aspx.SetModalities' not found.
+StackTrace:    at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at AcceptLinac.AcceptOK_click(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\AcceptLinac.ascx.vb:line 127
+Source: mscorlib
+TargetSite: System.Object InvokeMember(System.String, System.Reflection.BindingFlags, System.Reflection.Binder, System.Object, System.Object[], System.Reflection.ParameterModifier[], System.Globalization.CultureInfo, System.String[])
+-----------------------------------------------------------
+
+Time: 19/07/2019 04:32:25 PM
+-----------------------------------------------------------
+Message: Method 'ASP.b1page_aspx.SetModalities' not found.
+StackTrace:    at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at B1page.AcceptOKnosigpass(Int32 Task, String user, Int32 usergroup) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 948
+   at B1page.LaunchTab() in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 702
+   at B1page.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 378
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.MissingMethodException
+-----------------------------------------------------------
+
+Time: 19/07/2019 04:39:59 PM
+-----------------------------------------------------------
+Message: Method 'ASP.b1page_aspx.SetModalities' not found.
+StackTrace:    at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at B1page.AcceptOKnosigpass(Int32 Task, String user, Int32 usergroup) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 948
+   at B1page.LaunchTab() in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 702
+   at B1page.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 378
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.MissingMethodException
+-----------------------------------------------------------
+
+Time: 19/07/2019 04:40:17 PM
+-----------------------------------------------------------
+Message: Method 'ASP.b1page_aspx.SetModalities' not found.
+StackTrace:    at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at B1page.AcceptOKnosigpass(Int32 Task, String user, Int32 usergroup) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 948
+   at B1page.LaunchTab() in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 702
+   at B1page.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 378
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.MissingMethodException
+-----------------------------------------------------------
+
+Time: 19/07/2019 04:43:12 PM
+-----------------------------------------------------------
+Message: Method 'ASP.b1page_aspx.SetModalities' not found.
+StackTrace:    at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at B1page.AcceptOKnosigpass(Int32 Task, String user, Int32 usergroup) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 948
+   at B1page.LaunchTab() in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 702
+   at B1page.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 378
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.MissingMethodException
+-----------------------------------------------------------
+
+Time: 19/07/2019 04:43:19 PM
+-----------------------------------------------------------
+Message: Method 'ASP.b1page_aspx.SetModalities' not found.
+StackTrace:    at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at B1page.AcceptOKnosigpass(Int32 Task, String user, Int32 usergroup) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 948
+   at B1page.LaunchTab() in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 702
+   at B1page.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 378
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.MissingMethodException
+-----------------------------------------------------------
+
+Time: 19/07/2019 04:43:25 PM
+-----------------------------------------------------------
+Message: Method 'ASP.b1page_aspx.SetModalities' not found.
+StackTrace:    at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at B1page.AcceptOKnosigpass(Int32 Task, String user, Int32 usergroup) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 948
+   at B1page.LaunchTab() in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 702
+   at B1page.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 378
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.MissingMethodException
+-----------------------------------------------------------
+
+Time: 19/07/2019 04:43:36 PM
+-----------------------------------------------------------
+Message: Method 'ASP.b1page_aspx.SetModalities' not found.
+StackTrace:    at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at B1page.AcceptOKnosigpass(Int32 Task, String user, Int32 usergroup) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 948
+   at B1page.LaunchTab() in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 702
+   at B1page.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 378
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.MissingMethodException
+-----------------------------------------------------------
+
+Time: 19/07/2019 04:43:47 PM
+-----------------------------------------------------------
+Message: Method 'ASP.b1page_aspx.SetModalities' not found.
+StackTrace:    at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at B1page.AcceptOKnosigpass(Int32 Task, String user, Int32 usergroup) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 948
+   at B1page.LaunchTab() in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 702
+   at B1page.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 378
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.MissingMethodException
+-----------------------------------------------------------
+
+Time: 19/07/2019 04:45:00 PM
+-----------------------------------------------------------
+Message: Method 'ASP.b1page_aspx.SetModalities' not found.
+StackTrace:    at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at B1page.AcceptOKnosigpass(Int32 Task, String user, Int32 usergroup) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 948
+   at B1page.LaunchTab() in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 702
+   at B1page.Page_Load(Object sender, EventArgs e) in C:\EastbourneSimpleSolution\EastbourneSimple\B1page.aspx.vb:line 378
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /B1page.aspx
+Exception Type: System.MissingMethodException
+-----------------------------------------------------------
+

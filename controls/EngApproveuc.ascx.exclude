@@ -1,0 +1,76 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="EngApproveuc.ascx.vb" Inherits="controls_EngApproveuc" %>
+
+         <%@ Register src="CommentBoxuc.ascx" tagname="CommentBoxuc" tagprefix="uc1" %>
+
+         <%@ Register src="../WriteDatauc.ascx" tagname="WriteDatauc" tagprefix="uc2" %>
+<%@ Register src="../ConfirmPage.ascx" tagname="ConfirmPage" tagprefix="uc3" %>
+
+         <table id="EnergyTable">
+            <tr style="vertical-align:top;">
+     
+                <td  rowspan="2"><asp:GridView ID="GridView1" runat="server" 
+                        AutoGenerateColumns="False" visible="false" Width="126px" >
+            <Columns>
+            <asp:BoundField DataField="Energy" HeaderText="Select All Energies" 
+                    SortExpression="Energy" />
+                    <asp:TemplateField>  
+            <HeaderTemplate>  
+                <asp:CheckBox ID="chkSelectAll"   
+                    runat="server" 
+                    AutoPostBack="true"  
+                    OncheckedChanged="checked"
+                     />  
+            </HeaderTemplate>
+                    
+            <ItemTemplate>
+            <asp:CheckBox runat="server" ID="RowlevelCheckBox" />
+            </ItemTemplate>
+            </asp:TemplateField>
+            </Columns>
+        </asp:GridView></td>
+                <td style="width: 182px" > <asp:GridView ID="GridViewImage" runat="server" AutoGenerateColumns="False" Visible="false" >
+            <Columns>
+            
+                <asp:BoundField DataField="Energy" HeaderText="Select Imaging" 
+                    SortExpression="Energy" />
+                    <asp:TemplateField>  
+                             
+            <ItemTemplate>
+            <asp:CheckBox runat="server" ID="RowlevelCheckBoxImage" />
+
+            </ItemTemplate>
+                      </asp:TemplateField>
+            </Columns>
+        </asp:GridView></td>
+                
+            </tr>
+            <tr>
+                
+                <td style="width: 182px" >
+                    <asp:Button ID="engHandoverButton" runat="server" BackColor="#FFCC00" 
+                        causesvalidation="false" Height="100px" Text="" />
+                </td>
+               
+            </tr>
+            <tr>
+             
+                 <td colspan="2" style="height: 92px"><table>
+                           <tr>
+                               <td><asp:Literal ID="Literal1" runat="server" Text="Runup Comments"></asp:Literal></td>
+                                                          </tr>
+                           <tr>
+                               <td><uc1:commentboxuc ID="CommentBox" runat="server" /></td>
+                               
+                           </tr>
+                       </table></td>
+                              
+            </tr>
+        </table>
+
+<uc3:ConfirmPage ID="ConfirmPage1" runat="server" />
+
+              
+                     
+
+              
+                     

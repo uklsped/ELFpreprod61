@@ -1,0 +1,16 @@
+Time: 15/11/2019 11:53:18 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ErunupUserControl.UserApprovedEvent(String Tabset, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\ErunupUserControlCommon.ascx.vb:line 281
+   at T1page.WriteRecovery() in D:\Inetpub\wwwrootv4\elfv6preprod\T1page.aspx.vb:line 1273
+   at T1page.RestoreButton_Click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\T1page.aspx.vb:line 1164
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/T1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+

@@ -1,0 +1,30 @@
+Time: 24/02/2021 02:57:38 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Traininguc.UserApprovedEvent(String TabSet, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\Traininguc.ascx.vb:line 128
+   at WriteDatauc.AcceptOK_click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\WriteDatauc.ascx.vb:line 135
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/T1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 24/02/2021 02:58:20 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ErunupUserControl.UserApprovedEvent(String Tabset, String Userinfo) in D:\Inetpub\wwwrootv4\elfv6preprod\ErunupUserControlCommon.ascx.vb:line 136
+   at WriteDatauc.AcceptOK_click(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\WriteDatauc.ascx.vb:line 135
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/T1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+

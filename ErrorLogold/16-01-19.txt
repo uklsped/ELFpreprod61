@@ -1,0 +1,583 @@
+Time: 16/01/2019 09:46:02 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at E2page.EndofDayElf(String Caller) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\E2page.aspx.vb:line 1242
+   at E2page.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\E2page.aspx.vb:line 257
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E2page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 16/01/2019 09:47:33 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at E2page.EndofDayElf(String Caller) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\E2page.aspx.vb:line 1242
+   at E2page.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\E2page.aspx.vb:line 257
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E2page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 16/01/2019 09:47:42 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at E2page.EndofDayElf(String Caller) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\E2page.aspx.vb:line 1242
+   at E2page.Page_Load(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\E2page.aspx.vb:line 257
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E2page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+
+Time: 16/01/2019 10:37:15 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 10:37:51 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 10:42:46 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 10:54:15 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 10:54:53 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 10:56:34 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:00:07 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:02:01 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:04:22 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:05:00 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:09:23 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:10:28 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:12:51 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:13:51 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:18:35 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:20:19 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:23:00 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:26:41 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:28:48 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:36:37 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:40:16 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:43:43 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:49:32 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:51:20 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:52:36 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:53:28 AM
+-----------------------------------------------------------
+Message: Conversion from string "" to type 'Integer' is not valid.
+StackTrace:    at Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger(String Value)
+   at ViewOpenFaults.CreateConcessParams(String UserInfo, ConcessionParameters& ConcessParams) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\ViewOpenFaults.ascx.vb:line 443
+   at ViewOpenFaults.UserApprovedEvent(String Tabused, String Userinfo) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\ViewOpenFaults.ascx.vb:line 206
+   at WriteDatauc.AcceptOK_click(Object sender, EventArgs e) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\WriteDatauc.ascx.vb:line 157
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /E2page.aspx
+Exception Type: System.InvalidCastException
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:53:39 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 11:54:27 AM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 12:56:44 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 12:58:41 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 01:02:07 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 01:29:48 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 01:31:44 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 01:38:40 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 01:39:21 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 01:41:15 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 01:48:24 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 01:56:10 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 01:56:51 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:05:45 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:10:25 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:13:54 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:23:54 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:37:06 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:37:35 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:39:38 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:40:02 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:41:36 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:41:52 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:42:01 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:42:18 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:49:30 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:50:08 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+
+Time: 16/01/2019 02:54:53 PM
+-----------------------------------------------------------
+Message: Column 'State' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DavesCode.NewFaultHandling.CreateObject(Int32 IncidentID, String Linac, ConcessionParameters& ConcessP) in T:\Medical Physics\MP-Data\DS\EastbourneSimpleSolution\EastbourneSimple\App_Code\NewFaultHandling.vb:line 130
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+

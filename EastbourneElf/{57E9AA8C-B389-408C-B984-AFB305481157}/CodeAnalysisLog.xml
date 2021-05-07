@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Targets>
+  <Target Name="C:\Users\david.spendley\AppData\Local\Temp\tmp4398.tmp.cadir\bin\App_Code.dll">
+   <Modules>
+    <Module Name="app_code.dll">
+     <Namespaces>
+      <Namespace Name="DavesCode">
+       <Types>
+        <Type Name="Reuse" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#CommitClinical(System.String,System.String,System.Boolean)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf\App_Code" File="Reuse.vb" Line="1463">Object 'conn' can be disposed more than once in method 'Reuse.CommitClinical(String, String, Boolean)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1463, 1481, 1530</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CommitPreClin(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf\App_Code" File="Reuse.vb" Line="1335">Object 'conn' can be disposed more than once in method 'Reuse.CommitPreClin(String, String, String, Boolean, Boolean, Boolean, Boolean)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1335, 1404</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CommitRunup(System.Web.UI.WebControls.GridView,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf\App_Code" File="Reuse.vb" Line="1129">Object 'conn' can be disposed more than once in method 'Reuse.CommitRunup(GridView, String, String, String, String, Boolean, Boolean, Boolean)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1129</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MachineState(System.String,System.Int32,System.String,System.Int32,System.Boolean)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf\App_Code" File="Reuse.vb" Line="624">Object 'conn' can be disposed more than once in method 'Reuse.MachineState(String, Integer, String, Integer, Boolean)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 624, 631</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetStatus(System.String,System.String,System.Int32,System.Int32,System.String,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf\App_Code" File="Reuse.vb" Line="1629">Object 'conn' can be disposed more than once in method 'Reuse.SetStatus(String, String, Integer, Integer, String, Integer)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1629</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateActivityTable(System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf\App_Code" File="Reuse.vb" Line="710">Object 'conn' can be disposed more than once in method 'Reuse.UpdateActivityTable(String, String)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 710</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WriteAuxTables(System.String,System.String,System.String,System.Int32,System.Int32,System.Boolean,System.String,System.String,System.Boolean)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf\App_Code" File="Reuse.vb" Line="1270">Object 'conn' can be disposed more than once in method 'Reuse.WriteAuxTables(String, String, String, Integer, Integer, Boolean, String, String, Boolean)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1270</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf\App_Code" File="Reuse.vb" Line="1247">The query string passed to 'SqlCommand.New(String, SqlConnection)' in 'Reuse.WriteAuxTables(String, String, String, Integer, Integer, Boolean, String, String, Boolean)' could contain the following variables 'builder.ToString()'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WriteDuration(System.String,System.DateTime)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf\App_Code" File="Reuse.vb" Line="1722">Object 'conn' can be disposed more than once in method 'Reuse.WriteDuration(String, Date)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1722</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\david.spendley\AppData\Local\Temp\tmp4398.tmp.cadir\bin\App_Web_2ha15dfn.dll">
+   <Modules>
+    <Module Name="app_web_2ha15dfn.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="faultPage" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#UserApprovedEvent(System.String,System.String)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf" File="faultPage.aspx.vb" Line="149">Object 'conn' can be disposed more than once in method 'faultPage.UserApprovedEvent(String, String)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 149, 162, 194, 205, 209, 236, 249</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ClinicalApprovedEvent" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'faultPage.ClinicalApprovedEventEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'faultPage.ClinicalApprovedEventEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FaultTracker" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Button2_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf" File="FaultTracker.aspx.vb" Line="89">Object 'conn' can be disposed more than once in method 'FaultTracker.Button2_Click(Object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 89, 108, 111, 125, 128</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UpDateIncidentuc" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#UserApprovedEvent(System.String,System.String)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf" File="UpDateIncidentuc.ascx.vb" Line="217">Object 'conn' can be disposed more than once in method 'UpDateIncidentuc.UserApprovedEvent(String, String)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 217, 219</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\david.spendley\AppData\Local\Temp\tmp4398.tmp.cadir\bin\App_Web_fkatstwt.dll">
+   <Modules>
+    <Module Name="app_web_fkatstwt.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="ErunupUserControl" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#BlankGroup" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'ErunupUserControl.BlankGroupEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'ErunupUserControl.BlankGroupEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\david.spendley\AppData\Local\Temp\tmp4398.tmp.cadir\bin\App_Web_opheyhk3.dll">
+   <Modules>
+    <Module Name="app_web_opheyhk3.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="AcceptLinac" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AcknowledgeEnergies" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'AcceptLinac.AcknowledgeEnergiesEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'AcceptLinac.AcknowledgeEnergiesEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ClinicalApproved" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'AcceptLinac.ClinicalApprovedEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'AcceptLinac.ClinicalApprovedEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LaunchControl" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'AcceptLinac.LaunchControlEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'AcceptLinac.LaunchControlEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#NullPhysics" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'AcceptLinac.NullPhysicsEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'AcceptLinac.NullPhysicsEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ShowName" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'AcceptLinac.ShowNameEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'AcceptLinac.ShowNameEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateReturnButtons" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'AcceptLinac.UpdateReturnButtonsEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'AcceptLinac.UpdateReturnButtonsEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\david.spendley\AppData\Local\Temp\tmp4398.tmp.cadir\bin\App_Web_oz1hd5rj.dll">
+   <Modules>
+    <Module Name="app_web_oz1hd5rj.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="ConfirmPage" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ConfirmExit" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'ConfirmPage.ConfirmExitEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'ConfirmPage.ConfirmExitEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="DefectSave" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#UserApprovedEvent()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf" File="DefectSave.ascx.vb" Line="105">Object 'conn' can be disposed more than once in method 'DefectSave.UserApprovedEvent()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 105</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FaultGriduc" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ShowFault" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'FaultGriduc.ShowFaultEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'FaultGriduc.ShowFaultEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="RegisterUseruc" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ReloadTab" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'RegisterUseruc.ReloadTabEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'RegisterUseruc.ReloadTabEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ViewFaultsuc" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ReloadFaultsTab" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'ViewFaultsuc.ReloadFaultsTabEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'ViewFaultsuc.ReloadFaultsTabEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\david.spendley\AppData\Local\Temp\tmp4398.tmp.cadir\bin\App_Web_p0k4a3mu.dll">
+   <Modules>
+    <Module Name="app_web_p0k4a3mu.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="ClinicalUserControl" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#WriteClinicalTable()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf" File="ClinicalUserControl.ascx.vb" Line="625">Object 'conn' can be disposed more than once in method 'ClinicalUserControl.WriteClinicalTable()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 625, 627, 644, 646, 658, 683</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Singlemachinefaultuc" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#UserApprovedEvent(System.String,System.String)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf" File="Singlemachinefaultuc.ascx.vb" Line="344">Object 'conn' can be disposed more than once in method 'Singlemachinefaultuc.UserApprovedEvent(String, String)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 344, 346</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\david.spendley\AppData\Local\Temp\tmp4398.tmp.cadir\bin\App_Web_q4owudex.dll">
+   <Modules>
+    <Module Name="app_web_q4owudex.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="LinacStatusuc" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Resetstatus" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'LinacStatusuc.ResetstatusEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'LinacStatusuc.ResetstatusEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ViewOpenConcessions" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#SetupStatusTech(System.String)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf" File="ViewOpenConcessions.ascx.vb" Line="801">Object 'conn' can be disposed more than once in method 'ViewOpenConcessions.SetupStatusTech(String)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 801</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UserApprovedEvent(System.String,System.String)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf" File="ViewOpenConcessions.ascx.vb" Line="151">Object 'conn' can be disposed more than once in method 'ViewOpenConcessions.UserApprovedEvent(String, String)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 151</Issue>
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf" File="ViewOpenConcessions.ascx.vb" Line="312">Object 'conn' can be disposed more than once in method 'ViewOpenConcessions.UserApprovedEvent(String, String)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 312, 319, 342, 344</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ViewOpenFaults" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#SetupStatusTech(System.String)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf" File="ViewOpenFaults.ascx.vb" Line="1001">Object 'conn' can be disposed more than once in method 'ViewOpenFaults.SetupStatusTech(String)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1001</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UserApprovedEvent(System.String,System.String)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf" File="ViewOpenFaults.ascx.vb" Line="247">Object 'conn' can be disposed more than once in method 'ViewOpenFaults.UserApprovedEvent(String, String)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 247, 250</Issue>
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf" File="ViewOpenFaults.ascx.vb" Line="411">Object 'conn' can be disposed more than once in method 'ViewOpenFaults.UserApprovedEvent(String, String)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 411, 418, 441, 443</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpDateDefect" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'ViewOpenFaults.UpDateDefectEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'ViewOpenFaults.UpDateDefectEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpDateDefectDisplay" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'ViewOpenFaults.UpDateDefectDisplayEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'ViewOpenFaults.UpDateDefectDisplayEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\david.spendley\AppData\Local\Temp\tmp4398.tmp.cadir\bin\App_Web_srcuyyi1.dll">
+   <Modules>
+    <Module Name="app_web_srcuyyi1.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="LA1page" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#NoApprove" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'LA1page.NoApproveEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'LA1page.NoApproveEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="LA3page" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#NoApprove" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'LA3page.NoApproveEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'LA3page.NoApproveEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="LA4page" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#NoApprove" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'LA4page.NoApproveEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'LA4page.NoApproveEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\david.spendley\AppData\Local\Temp\tmp4398.tmp.cadir\bin\App_Web_v5ru4nqy.dll">
+   <Modules>
+    <Module Name="app_web_v5ru4nqy.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="Planned_Maintenanceuc" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#BlankGroup" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'Planned_Maintenanceuc.BlankGroupEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'Planned_Maintenanceuc.BlankGroupEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Repairuc" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#WriteFaultIDTable()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="\\bsuh.nhs.uk\Go\Users\RSCH\david.spendley\Documents\Visual Studio 2015\WebSites\EastbourneElf" File="Repairuc.ascx.vb" Line="564">Object 'conn' can be disposed more than once in method 'Repairuc.WriteFaultIDTable()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 564</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BlankGroup" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'Repairuc.BlankGroupEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'Repairuc.BlankGroupEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\david.spendley\AppData\Local\Temp\tmp4398.tmp.cadir\bin\App_Web_wmv4lqc5.dll">
+   <Modules>
+    <Module Name="app_web_wmv4lqc5.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="E1page" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#NoApprove" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'E1page.NoApproveEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'E1page.NoApproveEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="E2page" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#NoApprove" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'E2page.NoApproveEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'E2page.NoApproveEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="LA2page" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#NoApprove" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'LA2page.NoApproveEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'LA2page.NoApproveEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\david.spendley\AppData\Local\Temp\tmp4398.tmp.cadir\bin\App_Web_x4m3doft.dll">
+   <Modules>
+    <Module Name="app_web_x4m3doft.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="LockElfuc" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ClinicalApproved" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'LockElfuc.ClinicalApprovedEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'LockElfuc.ClinicalApprovedEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LaunchControl" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'LockElfuc.LaunchControlEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'LockElfuc.LaunchControlEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ManyFaultGriduc" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ShowFault" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'ManyFaultGriduc.ShowFaultEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'ManyFaultGriduc.ShowFaultEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="WriteDatauc" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#UserApproved" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-09-26 11:10:27Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'WriteDatauc.UserApprovedEventHandler' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'WriteDatauc.UserApprovedEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009">
+   <Name>Declare event handlers correctly</Name>
+   <Description>By convention, .NET events have two parameters that specify the event sender and event data. Event handler signatures should follow this form: void MyEventHandler(object sender, EventArgs e). The 'sender' parameter is always of type System.Object, even if it is possible to employ a more specific type. The 'e' parameter is always of type System.EventArgs. Events that do not provide event data should use the System.EventHandler delegate type. Event handlers return void so that they can send each event to multiple target methods. Any value returned by a target would be lost after the first call.</Description>
+   <Resolution Name="First">Declare the first parameter of {0} as an object named 'sender'.</Resolution>
+   <Resolution Name="Second">Declare the second parameter of {0} as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182133.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 89, 108, 111, 125, 128</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Review SQL queries for security vulnerabilities</Name>
+   <Description>A SQL command string built from user input is vulnerable to SQL injection attacks. Microsoft SQL Server and other database servers support stored procedures and parameterized SQL queries, which reduce the risk of injection attacks.</Description>
+   <Resolution Name="WithNonLiterals">The query string passed to {0} in {1} could contain the following variables {2}. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

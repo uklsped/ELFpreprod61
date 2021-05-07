@@ -1,0 +1,41 @@
+Time: 06/11/2019 01:55:14 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in D:\Inetpub\wwwrootv4\elfv6preprod\App_Code\Reuse.vb:line 3005
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in D:\Inetpub\wwwrootv4\elfv6preprod\App_Code\NewEngRunup.vb:line 49
+Source: App_Code
+TargetSite: Void ReturnImaging(Boolean ByRef, Boolean ByRef, System.Web.UI.WebControls.GridView, System.String)
+-----------------------------------------------------------
+
+Time: 06/11/2019 01:55:22 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DavesCode.Reuse.ReturnImaging(Boolean& iView, Boolean& XVi, GridView GridViewImage, String MachineName) in D:\Inetpub\wwwrootv4\elfv6preprod\App_Code\Reuse.vb:line 3005
+   at DavesCode.NewEngRunup.CommitRunup(GridView GridviewE, GridView grdviewI, String LinacName, String tabby, String LogOffName, String TextBoxc, Boolean Valid, Boolean Fault, Boolean lock, FaultParameters FaultParams) in D:\Inetpub\wwwrootv4\elfv6preprod\App_Code\NewEngRunup.vb:line 49
+Source: App_Code
+TargetSite: Void ReturnImaging(Boolean ByRef, Boolean ByRef, System.Web.UI.WebControls.GridView, System.String)
+-----------------------------------------------------------
+
+Time: 06/11/2019 02:49:49 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Repairuc.Page_Load(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\Repairuc.ascx.vb:line 449
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/B1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+

@@ -1,0 +1,12 @@
+Time: 14/12/2020 03:59:18 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at B1page.LaunchTab(String TabAction, String LiveTab) in D:\Inetpub\wwwrootv4\elfv6preprod\B1page.aspx.vb:line 456
+   at B1page.Page_Load(Object sender, EventArgs e) in D:\Inetpub\wwwrootv4\elfv6preprod\B1page.aspx.vb:line 286
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Source: /elfv6preprod/B1page.aspx
+Exception Type: System.NullReferenceException
+-----------------------------------------------------------
+

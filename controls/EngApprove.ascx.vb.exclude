@@ -1,0 +1,276 @@
+﻿
+Imports System.Data.SqlClient
+
+Partial Class controls_EngApprove
+    Inherits System.Web.UI.UserControl
+    Public Property Device() As String
+    Public Property TabLabel() As String
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Select Case Device
+            Case "LA1", "LA4"
+                'LinacLoad()
+                'MultiView1.SetActiveView(LA)
+                NewGenLoad()
+                MultiView1.SetActiveView(NewGen)
+            Case "T1", "T2"
+                'TomoLoad()
+                MultiView1.SetActiveView(Tomo)
+            Case Else
+                NewGenLoad()
+                MultiView1.SetActiveView(NewGen)
+        End Select
+
+    End Sub
+    Protected Sub LinacLoad()
+        If Not IsPostBack Then
+
+            'This sets up the gridview with all of the available energies
+            Dim SqlDataSource1 As New SqlDataSource()
+            SqlDataSource1.ID = "SqlDataSource1"
+            SqlDataSource1.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString
+            TabLabel = 1
+            If TabLabel = 1 Then
+
+                SqlDataSource1.SelectCommand = "SELECT * FROM [physicsenergies] where linac= @linac and Energy not in ('iView','XVI')"
+            Else
+                SqlDataSource1.SelectCommand = "SELECT * FROM [physicsenergies] where linac= @linac and EnergyID in (1,2,10,11,19,27,28)"
+            End If
+
+            SqlDataSource1.SelectParameters.Add("@linac", System.Data.SqlDbType.NVarChar)
+            SqlDataSource1.SelectParameters.Add("linac", Device)
+
+            GridView1.DataSource = SqlDataSource1
+            GridView1.DataBind()
+
+            'This makes visible checkboxes for those energies that are approved
+            Dim conn As SqlConnection
+            Dim comm As SqlCommand
+            Dim reader As SqlDataReader
+            Dim count As Integer = 0
+            Dim connectionString1 As String = ConfigurationManager.ConnectionStrings("connectionstring").ConnectionString
+            conn = New SqlConnection(connectionString1)
+            If TabLabel = 1 Then
+                'added imaging
+                comm = New SqlCommand("SELECT EnergyID, Approved FROM physicsenergies where linac=@linac and Energy not in ('iView','XVI')", conn)
+            Else
+                comm = New SqlCommand("SELECT EnergyID, Approved FROM physicsenergies where linac=@linac and EnergyID in (1,2,10,11,19,27,28)", conn)
+            End If
+            comm.Parameters.Add("@linac", System.Data.SqlDbType.NVarChar, 10)
+            comm.Parameters("@linac").Value = Device
+            Try
+                conn.Open()
+                reader = comm.ExecuteReader()
+                While reader.Read()
+                    'This will fall over if approved is null so needs error handling
+                    'Added handling 4/7/17
+                    If Not IsDBNull(reader.Item("Approved")) Then
+                        If Not reader.Item("Approved") Then
+                            Dim cb As CheckBox = CType(GridView1.Rows(count).FindControl("RowLevelCheckBox"), CheckBox)
+                            cb.Enabled = False
+                            cb.Visible = False
+                        End If
+                    Else
+                        Dim cb As CheckBox = CType(GridView1.Rows(count).FindControl("RowLevelCheckBox"), CheckBox)
+                        cb.Enabled = False
+                        cb.Visible = False
+                    End If
+                    count = count + 1
+                End While
+                reader.Close()
+            Finally
+                conn.Close()
+
+            End Try
+
+        End If
+    End Sub
+
+    Protected Sub NewGenLoad()
+        If Not IsPostBack Then
+            If Device Like "LA?" Then
+                GridView2.Visible = True
+            ElseIf Device Like "T?" Then
+
+            Else
+                GridView2.Visible = True
+                GridViewImage.Visible = True
+            End If
+            Dim SqlDataSource1 As New SqlDataSource()
+            SqlDataSource1.ID = "SqlDataSource1"
+            SqlDataSource1.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString
+            TabLabel = 1
+            If TabLabel = 1 Then
+                'added imaging
+                SqlDataSource1.SelectCommand = "SELECT * FROM [physicsenergies] where linac= @linac and Energy not in ('iView','XVI')"
+            Else
+                SqlDataSource1.SelectCommand = "SELECT * FROM [physicsenergies] where linac= @linac and EnergyID in (1,2,10,11,19,27,28)"
+            End If
+
+            SqlDataSource1.SelectParameters.Add("@linac", System.Data.SqlDbType.NVarChar)
+            SqlDataSource1.SelectParameters.Add("linac", Device)
+
+            GridView2.DataSource = SqlDataSource1
+            GridView2.DataBind()
+
+            'This makes visible checkboxes for those energies that are approved
+            Dim conn As SqlConnection
+            Dim comm As SqlCommand
+            Dim reader As SqlDataReader
+            Dim count As Integer = 0
+            Dim connectionString1 As String = ConfigurationManager.ConnectionStrings("connectionstring").ConnectionString
+            conn = New SqlConnection(connectionString1)
+            TabLabel = 1
+            If TabLabel = 1 Then
+                'added imaging
+                comm = New SqlCommand("SELECT EnergyID, Approved FROM physicsenergies where linac=@linac and Energy not in ('iView','XVI')", conn)
+            Else
+                comm = New SqlCommand("SELECT EnergyID, Approved FROM physicsenergies where linac=@linac and EnergyID in (1,2,10,11,19,27,28)", conn)
+            End If
+            comm.Parameters.Add("@linac", System.Data.SqlDbType.NVarChar, 10)
+            comm.Parameters("@linac").Value = Device
+            Try
+                conn.Open()
+                reader = comm.ExecuteReader()
+                While reader.Read()
+                    'This will fall over if approved is null so needs error handling
+                    'Added handling 4/7/17
+                    If Not IsDBNull(reader.Item("Approved")) Then
+                        If Not reader.Item("Approved") Then
+                            Dim cb As CheckBox = CType(GridView2.Rows(count).FindControl("RowLevelCheckBox1"), CheckBox)
+                            cb.Enabled = False
+                            cb.Visible = False
+                        End If
+                    Else
+                        Dim cb As CheckBox = CType(GridView2.Rows(count).FindControl("RowLevelCheckBox1"), CheckBox)
+                        cb.Enabled = False
+                        cb.Visible = False
+                    End If
+                    count = count + 1
+                End While
+                reader.Close()
+            Finally
+                conn.Close()
+
+            End Try
+            Select Case Device
+                Case "E1", "E2", "B1"
+                    SetImaging()
+            End Select
+        End If
+    End Sub
+
+    Protected Sub SetImaging()
+        Dim SqlDataSource1 As New SqlDataSource()
+        SqlDataSource1.ID = "SqlDataSource1"
+        SqlDataSource1.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString
+
+        SqlDataSource1.SelectCommand = "SELECT * FROM [physicsenergies] where linac=@linac and Energy in ('iView','XVI') order by energy"
+
+        SqlDataSource1.SelectParameters.Add("@linac", System.Data.SqlDbType.NVarChar)
+        SqlDataSource1.SelectParameters.Add("linac", Device)
+
+        GridViewImage.DataSource = SqlDataSource1
+        GridViewImage.DataBind()
+
+        Dim conn As SqlConnection
+        Dim comm As SqlCommand
+        Dim reader As SqlDataReader
+        Dim count As Integer = 0
+        Dim connectionString1 As String = ConfigurationManager.ConnectionStrings("connectionstring").ConnectionString
+        conn = New SqlConnection(connectionString1)
+
+        comm = New SqlCommand("SELECT EnergyID, Approved FROM physicsenergies where linac=@linac and Energy in ('iView','XVI') order by energy", conn)
+
+
+        comm.Parameters.Add("@linac", System.Data.SqlDbType.NVarChar, 10)
+        comm.Parameters("@linac").Value = Device
+        Try
+            conn.Open()
+            reader = comm.ExecuteReader()
+            While reader.Read()
+                'This will fall over if approved is null so needs error handling
+                'Same fix as Engineering run up energies 4/7/17
+                If Not IsDBNull(reader.Item("Approved")) Then
+                    If Not reader.Item("Approved") Then
+                        Dim cb As CheckBox = CType(GridViewImage.Rows(count).FindControl("RowLevelCheckBoxImage"), CheckBox)
+                        cb.Enabled = False
+                        cb.Visible = False
+                    End If
+                Else
+                    Dim cb As CheckBox = CType(GridViewImage.Rows(count).FindControl("RowLevelCheckBoxImage"), CheckBox)
+                    cb.Enabled = False
+                    cb.Visible = False
+                End If
+
+                count = count + 1
+            End While
+            reader.Close()
+        Finally
+            conn.Close()
+
+        End Try
+    End Sub
+
+    Protected Sub TomoLoad()
+
+    End Sub
+
+    Protected Sub Checked(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim toggle As CheckBox = CType(GridView1.HeaderRow.FindControl("chkSelectAll"), CheckBox)
+
+        If toggle.Checked = True Then
+
+            For Each grv As GridViewRow In GridView1.Rows
+                Dim cb As CheckBox = CType(grv.FindControl("RowlevelCheckBox"), CheckBox)
+                If cb.Enabled = True Then
+                    cb.Checked = True
+                End If
+            Next
+        Else
+            For Each grv As GridViewRow In GridView1.Rows
+                Dim cb As CheckBox = CType(grv.FindControl("RowlevelCheckBox"), CheckBox)
+                cb.Checked = False
+            Next
+        End If
+
+    End Sub
+    'Protected Sub EngHandoverButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles engHandoverButton.Click
+    '    Dim strScript As String = "<script>"
+    '    'count if there are unacknowledged rad concessions first
+    '    Dim Radcount As Boolean
+    '    Radcount = ConfirmNoRadConcession()
+    '    If Radcount Then
+    '        ConfirmExitEvent()
+    '    Else
+    '        strScript += "alert('There are unacknowledged Rad Concessions');"
+    '        strScript += "</script>"
+    '        ScriptManager.RegisterStartupScript(engHandoverButton, Me.GetType(), "JSCR", strScript.ToString(), False)
+    '    End If
+    'End Sub
+
+    'Protected Function ConfirmNoRadConcession() As Boolean
+    '    Dim comm As SqlCommand
+    '    Dim conn As SqlConnection
+    '    Dim connectionString As String = ConfigurationManager.ConnectionStrings("connectionstring").ConnectionString
+    '    Dim reader As SqlDataReader
+    '    Dim NumOpen As Integer
+    '    conn = New SqlConnection(connectionString)
+    '    comm = New SqlCommand("SELECT Count(*) as NumOpen From RadAckFault r Left outer join concessiontable c on r.Incidentid = c.Incidentid where r.Acknowledge = 'false' and linac=@linac", conn)
+    '    comm.Parameters.AddWithValue("@linac", LinacName)
+
+    '    conn.Open()
+    '    reader = comm.ExecuteReader()
+
+    '    If reader.Read() Then
+    '        NumOpen = reader.Item("NumOpen")
+    '        If NumOpen <> 0 Then 'there are open faults
+    '            Return False
+    '        Else
+    '            Return True
+    '        End If
+    '    Else
+    '        Return True
+
+    '    End If
+    'End Function
+End Class
