@@ -1,37 +1,24 @@
 ﻿Imports DavesCode
 Imports GlobalConstants
-Partial Class Planned_Maintenanceuc
-    Inherits System.Web.UI.UserControl
+Partial Public Class Planned_Maintenanceuc
+    Inherits UserControl
 
-    Private SelectCount As Boolean
     Private Radioselect As Integer
-    Private objconToday As TodayClosedFault
-    Private Todaydefect As DefectSave
-    Private Todaydefectpark As DefectSavePark
     Private MainFaultPanel As controls_MainFaultDisplayuc
-    Dim Master As Object
     Private laststate As String
-    Private lastuser As String
-    Private lastusergroup As String
     Private BoxChanged As String
-    Private Event AutoApproved(ByVal Tab As String, ByVal UserName As String)
-    Public Event BlankGroup(ByVal BlankUser As Integer)
-    Private tabstate As String
-    Dim FaultParams As DavesCode.FaultParameters = New DavesCode.FaultParameters()
+    Public Event BlankGroup(BlankUser As Integer)
+    Private ReadOnly FaultParams As New FaultParameters()
     Public Property LinacName() As String
     Private comment As String
-    Const PM As String = "4"
-    Dim objReportFault As controls_ReportFaultPopUpuc
-    Private WithEvents objdefect As DefectSave = New DefectSave
-    Const FAULTPOPUPSELECTED As String = "faultpopupupselected"
-    Const QASELECTED As String = "ModalityQApopupselected"
-    Const VIEWSTATEKEY_DYNCONTROL As String = "DynamicControlSelection"
-
-    Dim connectionString As String = ConfigurationManager.ConnectionStrings("connectionstring").ConnectionString
-    Dim Modalities As controls_ModalityDisplayuc
-    Const ENDOFDAY102 As Integer = 102
-    Const RECOVERY101 As Integer = 101
-    Const LOCKELFSELECTED As String = "LockELFSelected"
+    Private Const PM As String = "4"
+    Private Const QASELECTED As String = "ModalityQApopupselected"
+    Private Const VIEWSTATEKEY_DYNCONTROL As String = "DynamicControlSelection"
+    Private ReadOnly connectionString As String = ConfigurationManager.ConnectionStrings("connectionstring").ConnectionString
+    Private Modalities As controls_ModalityDisplayuc
+    Private Const ENDOFDAY102 As Integer = 102
+    Private Const RECOVERY101 As Integer = 101
+    Private Const LOCKELFSELECTED As String = "LockELFSelected"
 
     Private Property DynamicControlSelection() As String
         Get
@@ -44,12 +31,12 @@ Partial Class Planned_Maintenanceuc
                 Return result
             End If
         End Get
-        Set(ByVal value As String)
+        Set(value As String)
             ViewState.Item(VIEWSTATEKEY_DYNCONTROL) = value
         End Set
     End Property
 
-    Protected Sub Close_ModalityQAPopUp(ByVal EquipmentId As String)
+    Protected Sub Close_ModalityQAPopUp(EquipmentId As String)
         If LinacName = EquipmentId Then
             DynamicControlSelection = String.Empty
             Dim ModalityQA As controls_ModalityQAPopUpuc = CType(FindControl("ModalityQAPopUpuc1"), controls_ModalityQAPopUpuc)
@@ -57,57 +44,40 @@ Partial Class Planned_Maintenanceuc
         End If
     End Sub
 
-    Protected Sub Update_FaultClosedDisplays(ByVal EquipmentID As String)
+    Protected Sub Update_FaultClosedDisplays(EquipmentID As String)
         MainFaultPanel = PlaceHolderFaults.FindControl("MainFaultDisplay")
         MainFaultPanel.Update_FaultClosedDisplay(EquipmentID)
 
     End Sub
 
-
     ' This updates the defect display on defectsave etc when repeat fault from viewopenfaults
-    Protected Sub Update_DefectDailyDisplay(ByVal EquipmentID As String)
+    Protected Sub Update_DefectDailyDisplay(EquipmentID As String)
         If LinacName = EquipmentID Then
             MainFaultPanel = PlaceHolderFaults.FindControl("MainFaultDisplay")
             MainFaultPanel.Update_defectsToday(LinacName)
 
         End If
     End Sub
-    Protected Sub Update_ViewOpenFaults(ByVal EquipmentID As String)
+    Protected Sub Update_ViewOpenFaults(EquipmentID As String)
         If LinacName = EquipmentID Then
             MainFaultPanel = PlaceHolderFaults.FindControl("MainFaultDisplay")
             MainFaultPanel.Update_OpenConcessions(LinacName)
         End If
     End Sub
 
-    Public Sub UpdateReturnButtonsHandler()
-
-        'getlasttech returns laststate by ref!!!!
-        Reuse.GetLastTech(LinacName, 0, laststate, lastuser, lastusergroup)
-
-        StateTextBox.Text = laststate
-
-    End Sub
-
-    Protected Sub Page_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Init
-
+    Protected Sub Page_Init(sender As Object, e As EventArgs) Handles Me.Init
         AddHandler WriteDatauc1.UserApproved, AddressOf UserApprovedEvent
-        AddHandler AutoApproved, AddressOf UserApprovedEvent
-
         BoxChanged = "PMBoxChanged" + LinacName
 
-
     End Sub
-    Public Sub UserApprovedEvent(ByVal TabSet As String, ByVal Userinfo As String)
+    Public Sub UserApprovedEvent(TabSet As String, Userinfo As String)
         Dim machinelabel As String = LinacName & "Page.aspx';"
         Dim username As String = Userinfo
-        Dim LinacStateID As String = ""
-
-        Dim result As Boolean = False
         'This is here to cater for when system is recovering at end of day so no tab is actually loaded.
 
         If TabSet = PM Then
 
-            If (Not HttpContext.Current.Application(BoxChanged) Is Nothing) Then
+            If (HttpContext.Current.Application(BoxChanged) IsNot Nothing) Then
                 comment = HttpContext.Current.Application(BoxChanged).ToString
             Else
                 comment = String.Empty
@@ -131,7 +101,7 @@ Partial Class Planned_Maintenanceuc
                 Radioselect = RadioButtonList1.SelectedItem.Value
             End If
 
-            result = NewWriteAux.WriteAuxTables(LinacName, username, comment, Radioselect, TabSet, False, False, FaultParams)
+            Dim result As Boolean = NewWriteAux.WriteAuxTables(LinacName, username, comment, Radioselect, TabSet, False, False, FaultParams)
             If result Then
                 If Action = "Confirm" Then
 
@@ -142,7 +112,6 @@ Partial Class Planned_Maintenanceuc
                             Dim returnstring As String = LinacName + "page.aspx?TabAction=Autoclicked&NextTab=" & Convert.ToString(Radioselect)
 
                             Response.Redirect(returnstring)
-                            'Case 2
 
                         Case 3
 
@@ -168,7 +137,6 @@ Partial Class Planned_Maintenanceuc
 
                 Else
 
-                    'Dim returnstring As String = LinacName + "page.aspx?TabAction=Recovered&NextTab=" & TabSet
                     Dim returnstring As String = LinacName + "page.aspx"
                     Response.Redirect(returnstring, False)
                 End If
@@ -186,7 +154,7 @@ Partial Class Planned_Maintenanceuc
         ScriptManager.RegisterStartupScript(LogOffButton, Me.GetType(), "JSCR", strScript.ToString(), False)
     End Sub
 
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         laststate = Reuse.GetLastState(LinacName, 0)
         WaitButtons("Tech")
         CommentBox.BoxChanged = BoxChanged
@@ -228,8 +196,6 @@ Partial Class Planned_Maintenanceuc
                 ObjLock.LinacName = LinacName
                 ObjLock.UserReason = PM
                 AddHandler ObjLock.HideUnlockPopUp, AddressOf HideUnlockElf
-                'ObjLock.ID = "LockElf1"
-
                 LockELFPlaceholder.Controls.Add(ObjLock)
                 LockELFModalPopup.Show()
             Case QASELECTED
@@ -266,7 +232,7 @@ Partial Class Planned_Maintenanceuc
 
     End Sub
 
-    Public Sub HideUnlockElf(ByVal Hide As Boolean)
+    Public Sub HideUnlockElf(Hide As Boolean)
         If Hide Then
             LockELFModalPopup.Hide()
             DynamicControlSelection = String.Empty
@@ -275,7 +241,7 @@ Partial Class Planned_Maintenanceuc
             DynamicControlSelection = LOCKELFSELECTED
         End If
     End Sub
-    Protected Sub LogOffButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LogOffButton.Click
+    Protected Sub LogOffButton_Click(sender As Object, e As EventArgs) Handles LogOffButton.Click
         Dim wctrl As WriteDatauc = CType(FindControl("Writedatauc1"), WriteDatauc)
         Dim wcbutton As Button = CType(wctrl.FindControl("AcceptOK"), Button)
         Dim wclabel As Label = CType(wctrl.FindControl("WarningLabel"), Label)
@@ -293,9 +259,7 @@ Partial Class Planned_Maintenanceuc
 
         Select Case Radioselect
             Case 1, 5, 8
-
                 UserApprovedEvent(PM, LogOffUser)
-            'Case 2
 
             Case 3
                 wcbutton.Text = "Return to clinical"
@@ -313,14 +277,14 @@ Partial Class Planned_Maintenanceuc
     End Sub
 
 
-    Protected Sub RadioButtonList1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RadioButtonList1.SelectedIndexChanged
+    Protected Sub RadioButtonList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RadioButtonList1.SelectedIndexChanged
 
         LogOffButton.Enabled = True
         LogOffButton.BackColor = Drawing.Color.Yellow
 
     End Sub
 
-    Protected Sub PhysicsQA_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles PhysicsQA.Click
+    Protected Sub PhysicsQA_Click(sender As Object, e As EventArgs) Handles PhysicsQA.Click
         Dim ObjQA As controls_ModalityQAPopUpuc = Page.LoadControl("controls\ModalityQAPopUpuc.ascx")
         ObjQA.LinacName = LinacName
         ObjQA.ParentControl = PM
@@ -366,20 +330,20 @@ Partial Class Planned_Maintenanceuc
         ScriptManager.RegisterStartupScript(LockElf, Me.GetType(), "JSCR", strScript.ToString(), False)
     End Sub
 
-    Private Sub ForceFocus(ByVal ctrl As Control)
-        ScriptManager.RegisterStartupScript(Me, Me.[GetType](), "FocusScript", "setTimeout(function(){$get('" + _
+    Private Sub ForceFocus(ctrl As Control)
+        ScriptManager.RegisterStartupScript(Me, Me.[GetType](), "FocusScript", "setTimeout(function(){$get('" +
         ctrl.ClientID + "').focus();}, 100);", True)
     End Sub
-    Private Sub WaitButtons(ByVal WaitType As String)
+    Private Sub WaitButtons(WaitType As String)
 
         Select Case WaitType
             Case "Acknowledge"
                 Dim Accept As Button = FindControl("AcceptOK")
                 Dim Cancel As Button = FindControl("btnchkcancel")
-                If Not FindControl("AcceptOK") Is Nothing Then
+                If FindControl("AcceptOK") IsNot Nothing Then
                     Accept.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Accept, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not FindControl("btnchkcancel") Is Nothing Then
+                If FindControl("btnchkcancel") IsNot Nothing Then
                     Cancel.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Cancel, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
 
@@ -390,22 +354,22 @@ Partial Class Planned_Maintenanceuc
                 Dim Physics As Button = FindControl("PhysicsQA")
                 Dim Atlas As Button = FindControl("ViewAtlasButton")
                 Dim FaultPanel As Button = FindControl("FaultPanelButton")
-                If Not Eng Is Nothing Then
+                If Eng IsNot Nothing Then
                     Eng.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Eng, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not LogOff Is Nothing Then
+                If LogOff IsNot Nothing Then
                     LogOff.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(LogOff, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not Lock Is Nothing Then
+                If Lock IsNot Nothing Then
                     Lock.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Lock, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not Physics Is Nothing Then
+                If Physics IsNot Nothing Then
                     Physics.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Physics, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not Atlas Is Nothing Then
+                If Atlas IsNot Nothing Then
                     Atlas.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Atlas, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not FaultPanel Is Nothing Then
+                If FaultPanel IsNot Nothing Then
                     FaultPanel.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(FaultPanel, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
 
@@ -413,13 +377,13 @@ Partial Class Planned_Maintenanceuc
                 Dim clin As Button = FindControl("clinHandoverButton")
                 Dim LogOff As Button = FindControl("LogOff")
                 Dim TStart As Button = FindControl("TStart")
-                If Not clin Is Nothing Then
+                If clin IsNot Nothing Then
                     clin.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(clin, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not LogOff Is Nothing Then
+                If LogOff IsNot Nothing Then
                     LogOff.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(LogOff, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not TStart Is Nothing Then
+                If TStart IsNot Nothing Then
                     TStart.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(TStart, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
 
