@@ -121,7 +121,7 @@ Partial Public Class ErunupUserControl
     End Sub
 
     Public Sub UserApprovedEvent(ByVal Tabset As String, ByVal Userinfo As String)
-        If (Tabset = ENG) Or (Tabset = "666") Or (Tabset = RAD) Then
+        If (Tabset = ENG) Or (Tabset = RAD) Then
 
             Dim Action As String = HttpContext.Current.Session("Actionstate").ToString
             HttpContext.Current.Session.Remove("Actionstate")
@@ -151,10 +151,7 @@ Partial Public Class ErunupUserControl
 
             Else
                 Valid = False
-                If Tabset = "666" Then
-                    grdview = CType(mpContentPlaceHolder.FindControl("DummyGridview"), GridView)
-                    grdviewI = CType(mpContentPlaceHolder.FindControl("DummyGridViewImaging"), GridView)
-                End If
+
                 Successful = DavesCode.NewEngRunup.CommitRunup(grdview, grdviewI, LinacName, Tabset, Userinfo, comment, Valid, False, False, FaultParams)
                 If Successful Then
 
