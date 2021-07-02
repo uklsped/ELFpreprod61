@@ -1,36 +1,16 @@
-﻿Partial Class Traininguc
+﻿Partial Public Class Traininguc
     Inherits System.Web.UI.UserControl
     Private MachineName As String
-    Private SelectCount As Boolean
     Private Radioselect As Integer
     Private laststate As String
     Private lastuser As String
     Private lastusergroup As String
     Private MainFaultPanel As controls_MainFaultDisplayuc
-    Dim Master As Object
-    Dim BoxChanged As String
-    Private Event AutoApproved(ByVal Tab As String, ByVal UserName As String)
-    Private tabstate As String
-    Dim comment As String
-    Const TRAINING As String = "8"
-    Const FAULTPOPUPSELECTED As String = "faultpopupupselected"
-    Const VIEWSTATEKEY_DYNCONTROL As String = "DynamicControlSelection"
+    Private BoxChanged As String
+    Private comment As String
+    Private Const TRAINING As String = "8"
+    Private Const VIEWSTATEKEY_DYNCONTROL As String = "DynamicControlSelection"
 
-    Private Property DynamicControlSelection() As String
-        Get
-            Dim result As String = ViewState.Item(VIEWSTATEKEY_DYNCONTROL)
-            If result Is Nothing Then
-                'doing things like this lets us access this property without
-                'worrying about this property returning null/Nothing
-                Return String.Empty
-            Else
-                Return result
-            End If
-        End Get
-        Set(ByVal value As String)
-            ViewState.Item(VIEWSTATEKEY_DYNCONTROL) = value
-        End Set
-    End Property
     Public Property LinacName() As String
         Get
             Return MachineName
@@ -40,41 +20,6 @@
         End Set
     End Property
 
-
-    Public Sub UpdateReturnButtonsHandler()
-        'removed reference to LA 9/4/19
-        If Not IsPostBack Then
-            RadioButtonList1.Items.Add(New ListItem("Go To Engineering Run up", "1", False))
-            RadioButtonList1.Items.Add(New ListItem("Hand Back to Clinical", "3", False))
-            RadioButtonList1.Items.Add(New ListItem("Go to Planned Maintenance", "4", False))
-            RadioButtonList1.Items.Add(New ListItem("Go To Repair", "5", False))
-            RadioButtonList1.Items.Add(New ListItem("End of Day", "102", True))
-            'End If
-        End If
-
-        DavesCode.Reuse.GetLastTech(MachineName, 0, laststate, lastuser, lastusergroup)
-        If laststate = GlobalConstants.SUSPENDED Then
-            RadioButtonList1.Items.FindByValue(3).Enabled = True
-            If (lastusergroup = 2) Or (lastusergroup = 4) Then
-                RadioButtonList1.Items.FindByValue(4).Enabled = True
-                RadioButtonList1.Items.FindByValue(5).Enabled = True
-
-
-            End If
-            '5 caters for autosign from last tab
-        Else
-
-            If ((lastusergroup = 2) Or (lastusergroup = 4) Or (lastusergroup = 5)) Then
-                RadioButtonList1.Items.FindByValue(1).Enabled = True
-                RadioButtonList1.Items.FindByValue(4).Enabled = True
-                RadioButtonList1.Items.FindByValue(5).Enabled = True
-
-
-            End If
-        End If
-        StateTextBox.Text = laststate
-
-    End Sub
     Protected Sub Update_DefectDailyDisplay(ByVal EquipmentID As String)
         If LinacName = EquipmentID Then
             MainFaultPanel = PlaceHolderFaults.FindControl("MainFaultDisplay")
@@ -109,10 +54,9 @@
     Public Sub UserApprovedEvent(ByVal TabSet As String, ByVal Userinfo As String)
         Dim machinelabel As String = MachineName & "Page.aspx';"
         Dim username As String = Userinfo
-        Dim LinacStateID As String = ""
 
 
-        Dim FaultParams As DavesCode.FaultParameters = New DavesCode.FaultParameters()
+        Dim FaultParams As New DavesCode.FaultParameters()
         Dim EndofDay As Integer = 102
         Dim Recovery As Integer = 101
 
@@ -123,12 +67,10 @@
             strScript += "</script>"
             Dim wctrl As WriteDatauc = CType(FindControl("Writedatauc1"), WriteDatauc)
             wctrl.Visible = False
-
-            Dim result As Boolean = False
             Dim Action As String = HttpContext.Current.Session("Actionstate").ToString
             HttpContext.Current.Session.Remove("Actionstate")
 
-            If (Not HttpContext.Current.Application(BoxChanged) Is Nothing) Then
+            If (HttpContext.Current.Application(BoxChanged) IsNot Nothing) Then
                 comment = HttpContext.Current.Application(BoxChanged).ToString
             Else
                 comment = String.Empty
@@ -143,7 +85,7 @@
                 Radioselect = RadioButtonList1.SelectedItem.Value
             End If
 
-            result = DavesCode.NewWriteAux.WriteAuxTables(MachineName, username, comment, Radioselect, TabSet, False, False, FaultParams)
+            Dim result As Boolean = DavesCode.NewWriteAux.WriteAuxTables(MachineName, username, comment, Radioselect, TabSet, False, False, FaultParams)
 
             If result Then
                 If Action = "Confirm" Then
@@ -348,10 +290,10 @@
             Case "Acknowledge"
                 Dim Accept As Button = FindControl("AcceptOK")
                 Dim Cancel As Button = FindControl("btnchkcancel")
-                If Not FindControl("AcceptOK") Is Nothing Then
+                If FindControl("AcceptOK") IsNot Nothing Then
                     Accept.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Accept, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not FindControl("btnchkcancel") Is Nothing Then
+                If FindControl("btnchkcancel") IsNot Nothing Then
                     Cancel.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Cancel, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
 
@@ -362,22 +304,22 @@
                 Dim Physics As Button = FindControl("PhysicsQA")
                 Dim Atlas As Button = FindControl("ViewAtlasButton")
                 Dim FaultPanel As Button = FindControl("FaultPanelButton")
-                If Not Eng Is Nothing Then
+                If Eng IsNot Nothing Then
                     Eng.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Eng, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not LogOff Is Nothing Then
+                If LogOff IsNot Nothing Then
                     LogOff.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(LogOff, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not Lock Is Nothing Then
+                If Lock IsNot Nothing Then
                     Lock.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Lock, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not Physics Is Nothing Then
+                If Physics IsNot Nothing Then
                     Physics.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Physics, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not Atlas Is Nothing Then
+                If Atlas IsNot Nothing Then
                     Atlas.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Atlas, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not FaultPanel Is Nothing Then
+                If FaultPanel IsNot Nothing Then
                     FaultPanel.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(FaultPanel, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
 
@@ -385,13 +327,13 @@
                 Dim clin As Button = FindControl("clinHandoverButton")
                 Dim LogOff As Button = FindControl("LogOff")
                 Dim TStart As Button = FindControl("TStart")
-                If Not clin Is Nothing Then
+                If clin IsNot Nothing Then
                     clin.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(clin, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not LogOff Is Nothing Then
+                If LogOff IsNot Nothing Then
                     LogOff.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(LogOff, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not TStart Is Nothing Then
+                If TStart IsNot Nothing Then
                     TStart.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(TStart, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
 
