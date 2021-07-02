@@ -9,7 +9,6 @@
     Private BoxChanged As String
     Private comment As String
     Private Const TRAINING As String = "8"
-    Private Const VIEWSTATEKEY_DYNCONTROL As String = "DynamicControlSelection"
 
     Public Property LinacName() As String
 
