@@ -1,6 +1,6 @@
 ﻿Partial Public Class Traininguc
     Inherits System.Web.UI.UserControl
-    Private MachineName As String
+
     Private Radioselect As Integer
     Private laststate As String
     Private lastuser As String
@@ -12,13 +12,6 @@
     Private Const VIEWSTATEKEY_DYNCONTROL As String = "DynamicControlSelection"
 
     Public Property LinacName() As String
-        Get
-            Return MachineName
-        End Get
-        Set(ByVal value As String)
-            MachineName = value
-        End Set
-    End Property
 
     Protected Sub Update_DefectDailyDisplay(ByVal EquipmentID As String)
         If LinacName = EquipmentID Then
@@ -47,12 +40,12 @@
 
         AddHandler WriteDatauc1.UserApproved, AddressOf UserApprovedEvent
 
-        BoxChanged = "TABoxChanged" + MachineName
+        BoxChanged = "TABoxChanged" + LinacName
 
     End Sub
 
     Public Sub UserApprovedEvent(ByVal TabSet As String, ByVal Userinfo As String)
-        Dim machinelabel As String = MachineName & "Page.aspx';"
+        Dim machinelabel As String = LinacName & "Page.aspx';"
         Dim username As String = Userinfo
 
 
@@ -85,7 +78,7 @@
                 Radioselect = RadioButtonList1.SelectedItem.Value
             End If
 
-            Dim result As Boolean = DavesCode.NewWriteAux.WriteAuxTables(MachineName, username, comment, Radioselect, TabSet, False, False, FaultParams)
+            Dim result As Boolean = DavesCode.NewWriteAux.WriteAuxTables(LinacName, username, comment, Radioselect, TabSet, False, False, FaultParams)
 
             If result Then
                 If Action = "Confirm" Then
@@ -94,7 +87,7 @@
                         Case 1
 
                             If lastusergroup <> 3 Then
-                                Dim returnstring As String = MachineName + "page.aspx?TabAction=Autoclicked&NextTab=" & Convert.ToString(Radioselect)
+                                Dim returnstring As String = LinacName + "page.aspx?TabAction=Autoclicked&NextTab=" & Convert.ToString(Radioselect)
                                 Response.Redirect(returnstring)
                             Else
                                 ScriptManager.RegisterStartupScript(LogOffButton, Me.GetType(), "JSCR", strScript.ToString(), False)
@@ -103,14 +96,14 @@
                         Case 3
 
                             If lastusergroup = 3 Then
-                                Dim returnstring As String = MachineName + "page.aspx?TabAction=Autoclicked&NextTab=" & Convert.ToString(Radioselect)
+                                Dim returnstring As String = LinacName + "page.aspx?TabAction=Autoclicked&NextTab=" & Convert.ToString(Radioselect)
                                 Response.Redirect(returnstring)
                             Else
                                 ScriptManager.RegisterStartupScript(LogOffButton, Me.GetType(), "JSCR", strScript.ToString(), False)
                             End If
                         Case 4
                             If lastusergroup <> 3 Then
-                                Dim returnstring As String = MachineName + "page.aspx?TabAction=Autoclicked&NextTab=" & Convert.ToString(Radioselect)
+                                Dim returnstring As String = LinacName + "page.aspx?TabAction=Autoclicked&NextTab=" & Convert.ToString(Radioselect)
 
                                 Response.Redirect(returnstring)
                             Else
@@ -119,7 +112,7 @@
                         Case 5
 
                             If lastusergroup <> 3 Then
-                                Dim returnstring As String = MachineName + "page.aspx?TabAction=Autoclicked&NextTab=" & Convert.ToString(Radioselect)
+                                Dim returnstring As String = LinacName + "page.aspx?TabAction=Autoclicked&NextTab=" & Convert.ToString(Radioselect)
                                 Response.Redirect(returnstring)
                             Else
                                 ScriptManager.RegisterStartupScript(LogOffButton, Me.GetType(), "JSCR", strScript.ToString(), False)
@@ -127,7 +120,7 @@
                         Case 6
 
                             If lastusergroup <> 3 Then
-                                Dim returnstring As String = MachineName + "page.aspx?TabAction=Autoclicked&NextTab=" & Convert.ToString(Radioselect)
+                                Dim returnstring As String = LinacName + "page.aspx?TabAction=Autoclicked&NextTab=" & Convert.ToString(Radioselect)
                                 Response.Redirect(returnstring)
                             Else
                                 ScriptManager.RegisterStartupScript(LogOffButton, Me.GetType(), "JSCR", strScript.ToString(), False)
@@ -169,7 +162,7 @@
 
         CommentBox.BoxChanged = BoxChanged
         Dim wctrl As WriteDatauc = CType(FindControl("Writedatauc1"), WriteDatauc)
-        wctrl.LinacName = MachineName
+        wctrl.LinacName = LinacName
 
         If Not IsPostBack Then
 
@@ -179,7 +172,7 @@
             RadioButtonList1.Items.Add(New ListItem("Go To Repair", "5", False))
             RadioButtonList1.Items.Add(New ListItem("End of Day", "102", True))
         End If
-        DavesCode.Reuse.GetLastTech(MachineName, 0, laststate, lastuser, lastusergroup)
+        DavesCode.Reuse.GetLastTech(LinacName, 0, laststate, lastuser, lastusergroup)
 
         If laststate = GlobalConstants.SUSPENDED Then
             RadioButtonList1.Items.FindByValue(3).Enabled = True
@@ -215,7 +208,7 @@
         Dim wclabel As Label = CType(wctrl.FindControl("WarningLabel"), Label)
         Dim wctext As TextBox = CType(wctrl.FindControl("txtchkUserName"), TextBox)
         Dim LogOffUser As String = "AutoLog"
-        DavesCode.Reuse.GetLastTech(MachineName, 0, laststate, lastuser, lastusergroup)
+        DavesCode.Reuse.GetLastTech(LinacName, 0, laststate, lastuser, lastusergroup)
         Radioselect = RadioButtonList1.SelectedItem.Value
         Session.Add("name", LogOffUser)
         Session.Add("usergroup", lastusergroup)
