@@ -1,29 +1,22 @@
 ﻿Imports System.Data.SqlClient
 
-Partial Class ErunupUserControl
+Partial Public Class ErunupUserControl
     Inherits UserControl
 
-    Private mpContentPlaceHolder As ContentPlaceHolder
-    Private Todaydefect As DefectSave
-    Private TodaydefectPark As DefectSavePark
+    Private ReadOnly mpContentPlaceHolder As ContentPlaceHolder
     Private MainFaultPanel As controls_MainFaultDisplayuc
     Private BoxChanged As String
     Public Event BlankGroup(ByVal BlankUser As Integer)
-    Dim comment As String
-    Private Obpage As Page
-    Dim FaultParams As DavesCode.FaultParameters = New DavesCode.FaultParameters()
-    Const ENG As String = "1"
-    Const RAD As String = "9"
-    Const ENDOFDAY As String = "EndofDay"
+    Private comment As String
+    Private ReadOnly FaultParams As New DavesCode.FaultParameters()
+    Private Const ENG As String = "1"
+    Private Const RAD As String = "9"
     Public Property DataName() As String
     Public Property LinacName() As String
     Public Property UserReason() As Integer
-    Const FAULTPOPUPSELECTED As String = "faultpopupupselected"
-    Const QASELECTED As String = "ModalityQApopupselected"
-    Const VIEWSTATEKEY_DYNCONTROL As String = "DynamicControlSelection"
-    Const LOCKELFSELECTED As String = "LockELFSelected"
-    Private Modalities As controls_ModalityDisplayuc
-
+    Private Const QASELECTED As String = "ModalityQApopupselected"
+    Private Const VIEWSTATEKEY_DYNCONTROL As String = "DynamicControlSelection"
+    Private Const LOCKELFSELECTED As String = "LockELFSelected"
 
     Private Property DynamicControlSelection() As String
         Get
@@ -128,26 +121,23 @@ Partial Class ErunupUserControl
     End Sub
 
     Public Sub UserApprovedEvent(ByVal Tabset As String, ByVal Userinfo As String)
-
-        Dim ClinicalTab As String = "3"
-
         If (Tabset = ENG) Or (Tabset = "666") Or (Tabset = RAD) Then
 
             Dim Action As String = HttpContext.Current.Session("Actionstate").ToString
             HttpContext.Current.Session.Remove("Actionstate")
             Dim machinelabel As String = LinacName & "Page.aspx';"
-            Dim Valid As Boolean = False
             Dim strScript As String = "<script>"
             Dim grdview As GridView = FindControl("Gridview1")
             Dim grdviewI As GridView = FindControl("GridViewImage")
-            If (Not HttpContext.Current.Application(BoxChanged) Is Nothing) Then
+            If (HttpContext.Current.Application(BoxChanged) IsNot Nothing) Then
                 comment = HttpContext.Current.Application(BoxChanged).ToString
             Else
                 comment = String.Empty
             End If
 
-            Dim Successful As Boolean = False
+            Dim Valid As Boolean
 
+            Dim Successful As Boolean
             If Action = "Confirm" Then
                 Valid = True
                 Successful = DavesCode.NewEngRunup.CommitRunup(grdview, grdviewI, LinacName, Tabset, Userinfo, comment, Valid, False, False, FaultParams)
@@ -314,7 +304,8 @@ Partial Class ErunupUserControl
         End If
     End Sub
     Protected Sub SetEnergies(ByVal connectionString As String)
-        Dim SelCommand As String = ""
+        Dim SelCommand As String
+
         If UserReason = ENG Then
             'added imaging
             SelCommand = "SELECT * FROM [physicsenergies] where linac= @linac and Energy not in ('iView','XVI')"
@@ -365,7 +356,7 @@ Partial Class ErunupUserControl
                 cb.Enabled = False
                 cb.Visible = False
             End If
-            count = count + 1
+            count += 1
         End While
         reader.Close()
         conn.Close()
@@ -422,7 +413,7 @@ Partial Class ErunupUserControl
                 CType(GridViewImage.Rows(count).FindControl("RowLevelCheckBoxImage"), CheckBox).Visible = False
             End If
 
-            count = count + 1
+            count += 1
         End While
         reader.Close()
 
@@ -465,7 +456,7 @@ Partial Class ErunupUserControl
                 For Each grv As GridViewRow In GridView1.Rows
                     Dim checktick As CheckBox = CType(grv.FindControl("RowlevelCheckBox"), CheckBox)
                     If checktick.Checked = True Then
-                        counter = counter + 1
+                        counter += 1
                     End If
                 Next
                 Select Case counter
@@ -477,7 +468,7 @@ Partial Class ErunupUserControl
 
                             Dim checktick As CheckBox = CType(grv.FindControl("RowlevelCheckBoxImage"), CheckBox)
                             If checktick.Checked = True Then
-                                icounter = icounter + 1
+                                icounter += 1
                             End If
                         Next
                         If icounter <> 0 Then
@@ -607,10 +598,10 @@ Partial Class ErunupUserControl
             Case "Acknowledge"
                 Dim Accept As Button = FindControl("AcceptOK")
                 Dim Cancel As Button = FindControl("btnchkcancel")
-                If Not FindControl("AcceptOK") Is Nothing Then
+                If FindControl("AcceptOK") IsNot Nothing Then
                     Accept.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Accept, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not FindControl("btnchkcancel") Is Nothing Then
+                If FindControl("btnchkcancel") IsNot Nothing Then
                     Cancel.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Cancel, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
 
@@ -621,22 +612,22 @@ Partial Class ErunupUserControl
                 Dim Physics As Button = FindControl("PhysicsQA")
                 Dim Atlas As Button = FindControl("ViewAtlasButton")
                 Dim FaultPanel As Button = FindControl("FaultPanelButton")
-                If Not Eng Is Nothing Then
+                If Eng IsNot Nothing Then
                     Eng.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Eng, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not LogOff Is Nothing Then
+                If LogOff IsNot Nothing Then
                     LogOff.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(LogOff, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not Lock Is Nothing Then
+                If Lock IsNot Nothing Then
                     Lock.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Lock, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not Physics Is Nothing Then
+                If Physics IsNot Nothing Then
                     Physics.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Physics, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not Atlas Is Nothing Then
+                If Atlas IsNot Nothing Then
                     Atlas.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Atlas, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not FaultPanel Is Nothing Then
+                If FaultPanel IsNot Nothing Then
                     FaultPanel.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(FaultPanel, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
 
@@ -644,13 +635,13 @@ Partial Class ErunupUserControl
                 Dim clin As Button = FindControl("clinHandoverButton")
                 Dim LogOff As Button = FindControl("LogOff")
                 Dim TStart As Button = FindControl("TStart")
-                If Not clin Is Nothing Then
+                If clin IsNot Nothing Then
                     clin.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(clin, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not LogOff Is Nothing Then
+                If LogOff IsNot Nothing Then
                     LogOff.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(LogOff, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not TStart Is Nothing Then
+                If TStart IsNot Nothing Then
                     TStart.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(TStart, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
 
