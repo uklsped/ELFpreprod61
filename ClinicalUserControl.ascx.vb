@@ -4,60 +4,26 @@ Imports AjaxControlToolkit
 Imports System.Transactions
 
 
-Partial Class ClinicalUserControl
+Partial Public Class ClinicalUserControl
     Inherits UserControl
 
     Private mpContentPlaceHolder As ContentPlaceHolder
-    Private CurrentCID As Integer
-    Private colourstart As Color = Color.FromArgb(255, 204, 0)
-    Private colourstop As Color = Color.FromArgb(102, 153, 153)
+    Private ReadOnly colourstart As Color = Color.FromArgb(255, 204, 0)
+    Private ReadOnly colourstop As Color = Color.FromArgb(102, 153, 153)
     Private StateLabel As Label
     Private ActivityLabel As Label
-    Private appstate As String
-    Private suspstate As String
-    Private actionstate As String
-    Private FaultOriginTab As String
-    Private RunUpDone As String
-    Private faultviewstate As String
-    Private clinicalstate As String
-    Private returnclinical As String
-    Private LinacFlag As String
-    Private objconToday As TodayClosedFault
-    Private Todaydefect As DefectSave
-    Private TodaydefectPark As DefectSavePark
-    Dim BoxChanged As String
-    Dim RunupBoxChanged As String
-    'Dim accontrol As AcceptLinac
-    Private tabstate As String
-    Private TodayComment As controls_CommentBoxuc
-    Const CLINICAL As String = "3"
-    Const FAULTPOPUPSELECTED As String = "faultpopupupselected"
-    Const MODALITYDISPLAY As String = "ModalityDisplayLoaded"
-    Const VIEWSTATEKEY_DYNCONTROL As String = "DynamicControlSelection"
-    Dim connectionString As String = ConfigurationManager.ConnectionStrings("connectionstring").ConnectionString
-    Dim Modalities As controls_ModalityDisplayuc
+    Private BoxChanged As String
+    Private RunupBoxChanged As String
+    Private Const CLINICAL As String = "3"
+    Private ReadOnly connectionString As String = ConfigurationManager.ConnectionStrings("connectionstring").ConnectionString
+    Private Modalities As controls_ModalityDisplayuc
     Private MainFaultPanel As controls_MainFaultDisplayuc
-    Private Property DynamicControlSelection() As String
-        Get
-            Dim result As String = ViewState.Item(VIEWSTATEKEY_DYNCONTROL)
-            If result Is Nothing Then
-                'doing things like this lets us access this property without
-                'worrying about this property returning null/Nothing
-                Return String.Empty
-            Else
-                Return result
-            End If
-        End Get
-        Set(ByVal value As String)
-            ViewState.Item(VIEWSTATEKEY_DYNCONTROL) = value
-        End Set
-    End Property
+
     Public Property LinacName() As String
 
-    Public Function FormatImage(ByVal energy As Boolean) As String
+    Public Function FormatImage(energy As Boolean) As String
 
         Dim happyIcon As String = "Images/check_mark.jpg"
-
         Dim sadIcon As String = "Images/box_with_x.jpg"
         If energy Then
             Return happyIcon
@@ -66,7 +32,7 @@ Partial Class ClinicalUserControl
         End If
     End Function
 
-    Protected Sub Update_ClosedFaultDisplay(ByVal EquipmentID As String)
+    Protected Sub Update_ClosedFaultDisplay(EquipmentID As String)
         If LinacName = EquipmentID Then
             MainFaultPanel = PlaceHolderFaults.FindControl("MainFaultDisplay")
             MainFaultPanel.Update_FaultClosedDisplay(LinacName)
@@ -75,7 +41,7 @@ Partial Class ClinicalUserControl
 
 
     ' This updates the defect display on defectsave etc when repeat fault from viewopenfaults
-    Protected Sub Update_DefectDailyDisplay(ByVal EquipmentID As String)
+    Protected Sub Update_DefectDailyDisplay(EquipmentID As String)
 
         If LinacName = EquipmentID Then
             MainFaultPanel = PlaceHolderFaults.FindControl("MainFaultDisplay")
@@ -85,7 +51,7 @@ Partial Class ClinicalUserControl
 
     End Sub
 
-    Protected Sub Update_ViewOpenFaults(ByVal EquipmentID As String)
+    Protected Sub Update_ViewOpenFaults(EquipmentID As String)
         If LinacName = EquipmentID Then
             MainFaultPanel = PlaceHolderFaults.FindControl("MainFaultDisplay")
             MainFaultPanel.Update_OpenConcessions(LinacName)
@@ -93,17 +59,17 @@ Partial Class ClinicalUserControl
         End If
     End Sub
 
-    Protected Sub Page_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Init
+    Protected Sub Page_Init(sender As Object, e As System.EventArgs) Handles Me.Init
         'The method of finding acceptlinac3 started from here http://forums.asp.net/t/1380670.aspx?Access+Master+page+properties+from+User+Control
 
         Dim tabcontainer1 As TabContainer
         Page = Me.Page
         mpContentPlaceHolder =
         CType(Page.Master.FindControl("ContentPlaceHolder1"), ContentPlaceHolder)
-        If Not mpContentPlaceHolder Is Nothing Then
+        If mpContentPlaceHolder IsNot Nothing Then
             tabcontainer1 = CType(mpContentPlaceHolder.
                 FindControl("tcl"), TabContainer)
-            If Not tabcontainer1 Is Nothing Then
+            If tabcontainer1 IsNot Nothing Then
                 Dim panelcontrol As TabPanel = tabcontainer1.FindControl("TabPanel3")
 
             End If
@@ -111,7 +77,7 @@ Partial Class ClinicalUserControl
 
         AddHandler WriteDatauc2.UserApproved, AddressOf UserApprovedEvent
 
-        If Not mpContentPlaceHolder Is Nothing Then
+        If mpContentPlaceHolder IsNot Nothing Then
             StateLabel = CType(mpContentPlaceHolder.
                 FindControl("StateLabel"), Label)
             ActivityLabel = CType(mpContentPlaceHolder.FindControl("ActivityLabel"), Label)
@@ -122,53 +88,39 @@ Partial Class ClinicalUserControl
 
     End Sub
 
-    Public Sub ClinicalApprovedEvent(ByVal connectionString As String)
+    Public Sub ClinicalApprovedEvent(connectionString As String)
         'This is the point that the gridviews are displayed and Clinical Table Data is written
         'BindEnergyData()
 
         'This looks to see if BoxChanged has a value. if it has the comment has not been saved.
-        If Not HttpContext.Current.Application(BoxChanged) Is Nothing Then
+        If HttpContext.Current.Application(BoxChanged) IsNot Nothing Then
             HiddenFieldLinacState.Value = DavesCode.NewCommitClinical.NewWriteClinicalTable(LinacName, HttpContext.Current.Application(BoxChanged), connectionString)
             CommentBox.ResetCommentBox(String.Empty)
         End If
         BindComments()
         BindRunUpComments(connectionString)
-        'ModalityDisplays(connectionString)
+
         HiddenFieldModalityVisible.Value = True
     End Sub
 
-    Protected Sub ModalityDisplays(ByVal connectionString As String)
-        Modalities = Page.LoadControl("controls/ModalityDisplayuc.ascx")
-        CType(Modalities, controls_ModalityDisplayuc).LinacName = LinacName
-        CType(Modalities, controls_ModalityDisplayuc).ID = "ModalityDisplayClinical"
-        CType(Modalities, controls_ModalityDisplayuc).Mode = "Clinical"
-        CType(Modalities, controls_ModalityDisplayuc).ConnectionString = connectionString
-        ModalityPlaceholder.Controls.Add(Modalities)
-        ModalityDisplayPanel.Visible = True
-        DynamicControlSelection = MODALITYDISPLAY
-    End Sub
-
-    Public Sub UserApprovedEvent(ByVal TabSet As String, ByVal Userinfo As String)
+    Public Sub UserApprovedEvent(TabSet As String, Userinfo As String)
 
         Dim machinelabel As String = LinacName & "Page.aspx"
         Dim username As String = Userinfo
-
-        Dim Result As Boolean = False
         Dim EndofDay As Boolean = False
 
         If TabSet = CLINICAL Or TabSet = "Recover" Then
             Dim Action As String = HttpContext.Current.Session("Actionstate").ToString
             HttpContext.Current.Session.Remove("Actionstate")
-            Dim FaultParams As DavesCode.FaultParameters = New DavesCode.FaultParameters()
+            Dim FaultParams As New DavesCode.FaultParameters()
             If Action = "EndofDay" Then
                 EndofDay = True
             End If
-            Result = DavesCode.NewCommitClinical.CommitClinical(LinacName, username, False, FaultParams, EndofDay)
+            Dim Result As Boolean = DavesCode.NewCommitClinical.CommitClinical(LinacName, username, False, FaultParams, EndofDay)
             If Result Then
 
                 CommentBox.ResetCommentBox(String.Empty)
 
-                DynamicControlSelection = String.Empty
                 If Action = "Recover" Then
                     Dim returnstring As String = LinacName + "page.aspx?TabAction=Recovered&NextTab=" & TabSet
                     Response.Redirect(returnstring)
@@ -185,16 +137,9 @@ Partial Class ClinicalUserControl
             End If
         End If
     End Sub
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Protected Sub Page_Load(sender As Object, e As System.EventArgs) Handles Me.Load
         SaveText.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(SaveText, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
         WaitButtons("Rad")
-
-        'Select Case Me.DynamicControlSelection
-
-        '    Case MODALITYDISPLAY
-        '        ModalityDisplays(connectionString)
-        '    Case Else
-        'End Select
 
         Dim ReportFault As controls_ReportAFaultuc = CType(FindControl("ReportAFaultuc1"), controls_ReportAFaultuc)
         ReportFault.LinacName = LinacName
@@ -225,21 +170,13 @@ Partial Class ClinicalUserControl
         If HiddenFieldModalityVisible.Value Then
             ModalityDisplayPanel.Visible = True
         End If
-        'If Not IsPostBack Then
-        '    Select Case Me.DynamicControlSelection
-
-        '        Case MODALITYDISPLAY
-        '            ModalityDisplays(connectionString)
-        '        Case Else
-        '    End Select
-        'End If
 
     End Sub
-    Protected Sub BindRunUpComments(ByVal connectionString As String)
+    Protected Sub BindRunUpComments(connectionString As String)
         Dim RunupComment As String
-        Dim con As SqlConnection = New SqlConnection(connectionString)
+        Dim con As New SqlConnection(connectionString)
         con.Open()
-        Dim comm As SqlCommand = New SqlCommand("select e.comment from handoverenergies e where e.handoverid = (Select Max(handoverid) as mancount from [handoverenergies] where linac=@linac and Comment is not NULL)", con)
+        Dim comm As New SqlCommand("select e.comment from handoverenergies e where e.handoverid = (Select Max(handoverid) as mancount from [handoverenergies] where linac=@linac and Comment is not NULL)", con)
         comm.Parameters.AddWithValue("@linac", LinacName)
         RunupComment = CStr(comm.ExecuteScalar())
         RunUpCommentBox.ResetCommentBox(RunupComment)
@@ -263,8 +200,7 @@ Partial Class ClinicalUserControl
 
     End Sub
 
-
-    Protected Function QuerySqlConnection(ByVal MachineName As String, ByVal query As String) As SqlDataSource
+    Protected Function QuerySqlConnection(MachineName As String, query As String) As SqlDataSource
         'This uses the sqldatasource instead of the individual conn definitions so reader can't be used
         'this solution is from http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.select%28v=vs.90%29.aspx
 
@@ -277,10 +213,9 @@ Partial Class ClinicalUserControl
         SqlDataSource1.SelectParameters.Add("linac", MachineName)
         Return SqlDataSource1
 
-
     End Function
 
-    Protected Sub LinacHandover_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LogOffButton.Click
+    Protected Sub LinacHandover_Click(sender As Object, e As System.EventArgs) Handles LogOffButton.Click
         'This hands over linac to enable repair, planned maintenance or Physics QA to take place
         'But it needs to allow existing engineering and pre-clinical run up to be retained
         'It needs a log out as well+
@@ -296,17 +231,16 @@ Partial Class ClinicalUserControl
         WriteDatauc2.Visible = True
         ForceFocus(wctext)
 
-
     End Sub
-    Private Sub ForceFocus(ByVal ctrl As Control)
+    Private Sub ForceFocus(ctrl As Control)
         ScriptManager.RegisterStartupScript(Me, Me.[GetType](), "FocusScript", "setTimeout(function(){$get('" +
         ctrl.ClientID + "').focus();}, 100);", True)
     End Sub
 
-    Protected Sub SaveText_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles SaveText.Click
+    Protected Sub SaveText_Click(sender As Object, e As System.EventArgs) Handles SaveText.Click
         Dim statusid As Integer
         Try
-            Using myscope As TransactionScope = New TransactionScope()
+            Using myscope As New TransactionScope()
                 Dim connectionString1 As String = ConfigurationManager.ConnectionStrings("connectionstring").ConnectionString
                 statusid = DavesCode.NewCommitClinical.NewWriteClinicalTable(LinacName, HttpContext.Current.Application(BoxChanged), connectionString1)
                 BindComments()
@@ -322,32 +256,28 @@ Partial Class ClinicalUserControl
         CommentBox.ResetCommentBox(String.Empty)
     End Sub
 
-    Protected Sub Tstart_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Tstart.Click
+    Protected Sub Tstart_Click(sender As Object, e As System.EventArgs) Handles Tstart.Click
         Dim linacstatusid As String
         'http://www.javascripter.net/faq/hextorgb.htm to convert from hex to argb
         Dim connectionString As String = ConfigurationManager.ConnectionStrings("connectionstring").ConnectionString
 
-        If Not StateLabel Is Nothing Then
+        If StateLabel IsNot Nothing Then
             linacstatusid = HiddenFieldLinacState.Value
 
             Dim tval As String = Tstart.Text
             Try
-                Using myscope As TransactionScope = New TransactionScope()
+                Using myscope As New TransactionScope()
                     If tval = "Start Treatment" Then
 
                         DavesCode.NewCommitClinical.SetTreatment("Treating", LinacName, linacstatusid, connectionString)
                         Tstart.Text = "Stop Treatment"
                         Tstart.BackColor = colourstop
-
                         ActivityLabel.Text = "Clinical - Treating"
 
-
                     Else
-
                         DavesCode.NewCommitClinical.SetTreatment("Not Treating", LinacName, linacstatusid, connectionString)
                         Tstart.Text = "Start Treatment"
                         Tstart.BackColor = colourstart
-
                         ActivityLabel.Text = "Clinical - Not Treating"
                     End If
 
@@ -394,20 +324,18 @@ Partial Class ClinicalUserControl
         ScriptManager.RegisterStartupScript(Tstart, Me.GetType(), "JSCR", strScript.ToString(), False)
     End Sub
 
-
-
     '    'from http://msdn.microsoft.com/en-us/library/system.string.isnullorempty(v=vs.110).aspx
 
-    Private Sub WaitButtons(ByVal WaitType As String)
+    Private Sub WaitButtons(WaitType As String)
 
         Select Case WaitType
             Case "Acknowledge"
                 Dim Accept As Button = FindControl("AcceptOK")
                 Dim Cancel As Button = FindControl("btnchkcancel")
-                If Not FindControl("AcceptOK") Is Nothing Then
+                If FindControl("AcceptOK") IsNot Nothing Then
                     Accept.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Accept, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not FindControl("btnchkcancel") Is Nothing Then
+                If FindControl("btnchkcancel") IsNot Nothing Then
                     Cancel.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Cancel, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
 
@@ -418,22 +346,22 @@ Partial Class ClinicalUserControl
                 Dim Physics As Button = FindControl("PhysicsQA")
                 Dim Atlas As Button = FindControl("ViewAtlasButton")
                 Dim FaultPanel As Button = FindControl("FaultPanelButton")
-                If Not Eng Is Nothing Then
+                If Eng IsNot Nothing Then
                     Eng.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Eng, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not LogOff Is Nothing Then
+                If LogOff IsNot Nothing Then
                     LogOff.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(LogOff, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not Lock Is Nothing Then
+                If Lock IsNot Nothing Then
                     Lock.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Lock, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not Physics Is Nothing Then
+                If Physics IsNot Nothing Then
                     Physics.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Physics, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not Atlas Is Nothing Then
+                If Atlas IsNot Nothing Then
                     Atlas.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Atlas, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not FaultPanel Is Nothing Then
+                If FaultPanel IsNot Nothing Then
                     FaultPanel.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(FaultPanel, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
 
@@ -441,13 +369,13 @@ Partial Class ClinicalUserControl
                 Dim clin As Button = FindControl("clinHandoverButton")
                 Dim LogOff As Button = FindControl("LogOffButton")
                 Dim TStart As Button = FindControl("TStart")
-                If Not clin Is Nothing Then
+                If clin IsNot Nothing Then
                     clin.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(clin, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not LogOff Is Nothing Then
+                If LogOff IsNot Nothing Then
                     LogOff.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(LogOff, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
-                If Not TStart Is Nothing Then
+                If TStart IsNot Nothing Then
                     TStart.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(TStart, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
                 End If
 
@@ -455,15 +383,12 @@ Partial Class ClinicalUserControl
 
     End Sub
 
-
-
     Protected Sub EndofDayButton_Click(sender As Object, e As EventArgs) Handles EndofDayButton.Click
 
         Dim wctrl As WriteDatauc = CType(FindControl("Writedatauc2"), WriteDatauc)
         Dim wcbutton As Button = CType(wctrl.FindControl("AcceptOK"), Button)
         Dim wclabel As Label = CType(wctrl.FindControl("WarningLabel"), Label)
         Dim wctext As TextBox = CType(wctrl.FindControl("txtchkUserName"), TextBox)
-
 
         Session.Add("Actionstate", "EndofDay")
         wclabel.Text = "Are you sure? This is the End of Day"
