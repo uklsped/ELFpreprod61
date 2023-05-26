@@ -23,7 +23,7 @@ Partial Class Modalitiesuc
 
     End Sub
     Protected Sub UserApprovedEvent(ByVal Tabused As String, ByVal Userinfo As String)
-        Dim Repairlist As RadioButtonList
+        'Dim Repairlist As RadioButtonList
         Dim row As Integer = Application(energyrow)
         Dim erow As GridViewRow
         Dim cb As CheckBox
@@ -36,21 +36,21 @@ Partial Class Modalitiesuc
             erow = GridView1.Rows(row)
             cb = erow.Cells(3).Controls(0)
             If Not cb.Checked Or (cb.Checked And usergroupselected = 4) Then
-                If Not Me.Parent.FindControl("RadioButtonlist1") Is Nothing Then
-                    Repairlist = Me.Parent.FindControl("RadioButtonlist1")
-                    'modified for E1 etc that don't have pre-clin now 9/10/17
-                    If LinacName Like "LA?" Then
-                        Repairlist.Items.FindByValue(2).Enabled = False
-                    End If
-                    Repairlist.Items.FindByValue(3).Enabled = False
-                    If Not Repairlist.Items.FindByValue(4) Is Nothing Then
-                        Repairlist.Items.FindByValue(4).Enabled = False
-                    End If
-                    If Not Repairlist.Items.FindByValue(5) Is Nothing Then
-                        Repairlist.Items.FindByValue(5).Enabled = False
-                    End If
-                    Repairlist.Items.FindByValue(8).Enabled = False
-                End If
+                'If Not Me.Parent.FindControl("RadioButtonlist1") Is Nothing Then
+                '    Repairlist = Me.Parent.FindControl("RadioButtonlist1")
+                '    'modified for E1 etc that don't have pre-clin now 9/10/17
+                '    If LinacName Like "LA?" Then
+                '        Repairlist.Items.FindByValue(2).Enabled = False
+                '    End If
+                '    Repairlist.Items.FindByValue(3).Enabled = False
+                '    If Not Repairlist.Items.FindByValue(4) Is Nothing Then
+                '        Repairlist.Items.FindByValue(4).Enabled = False
+                '    End If
+                '    If Not Repairlist.Items.FindByValue(5) Is Nothing Then
+                '        Repairlist.Items.FindByValue(5).Enabled = False
+                '    End If
+                '    Repairlist.Items.FindByValue(8).Enabled = False
+                'End If
                 Dim Action As String = Application(actionstate)
                 Dim wctrl As WriteDatauc = CType(FindControl("Writedatauc1"), WriteDatauc)
                 wctrl.Visible = False

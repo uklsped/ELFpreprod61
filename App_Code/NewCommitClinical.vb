@@ -31,7 +31,8 @@ Namespace DavesCode
             time = Now()
             Dim StartTime As DateTime
             Dim reader As SqlDataReader
-            Dim CHID As Integer
+            'Dim CHID As Integer
+            Dim EHID As Integer
             Dim breakdown As Boolean = Fault
             'Dim textbox As String = TextBoxc
             Dim conn As SqlConnection
@@ -60,17 +61,20 @@ Namespace DavesCode
             minutesDuration = Decimal.Round(duration.TotalMinutes, 2, MidpointRounding.ToEven)
 
             'this gets the ID of the associated engineering handover
-            commHAuthID = New SqlCommand("Select CHandID from ClinicalHandover where CHandID  = (Select max(CHandID) as lastrecord from ClinicalHandover where linac=@linac)", conn)
+            'commHAuthID = New SqlCommand("Select CHandID from ClinicalHandover where CHandID  = (Select max(CHandID) as lastrecord from ClinicalHandover where linac=@linac)", conn)
+            commHAuthID = New SqlCommand("Select HandoverId from HandoverEnergies where HandoverID  = (Select max(HandoverID) as lastrecord from HandoverEnergies where linac=@linac)", conn)
             commHAuthID.Parameters.Add("@linac", SqlDbType.NVarChar, 10)
             commHAuthID.Parameters("@linac").Value = LinacName
 
             conn.Open()
             reader = commHAuthID.ExecuteReader()
             If reader.Read() Then
-                CHID = reader.Item("CHandId")
-                reader.Close()
-                conn.Close()
+                'CHID = reader.Item("CHandId")
+                EHID = reader.Item("HandoverID")
+
             End If
+            reader.Close()
+            conn.Close()
             'Moved If Breakdown after this section, checking and writing treatment table to here because it needs to be checked both for breakdown and if recover button operated.
             'It's only if there is a breakdown or recover that there will be a null entry for treatmentstoptime Not true 22/11/17
 
@@ -109,11 +113,14 @@ Namespace DavesCode
             'This writes the clinicalstatus table
 
             Dim commaccept As SqlCommand
-            commaccept = New SqlCommand("INSERT INTO ClinicalStatus ( PClinID, LogInDate, LogOutDate, linac, Duration, LogInName, LogOutName,LogOutStatusID, logInStatusID) " &
-                                                "VALUES (@PClinID, @LogInDate, @LogOutDate, @linac, @Duration,@LogInName, @LogOutName, @LogOutStatusID, @logInStatusID)", conn)
-
-            commaccept.Parameters.Add("@PClinID", SqlDbType.Int)
-            commaccept.Parameters("@PClinID").Value = CHID
+            'commaccept = New SqlCommand("INSERT INTO ClinicalStatus ( PClinID, LogInDate, LogOutDate, linac, Duration, LogInName, LogOutName,LogOutStatusID, logInStatusID) " &
+            '                                    "VALUES (@PClinID, @LogInDate, @LogOutDate, @linac, @Duration,@LogInName, @LogOutName, @LogOutStatusID, @logInStatusID)", conn)
+            commaccept = New SqlCommand("INSERT INTO ClinicalStatus ( EHID, LogInDate, LogOutDate, linac, Duration, LogInName, LogOutName,LogOutStatusID, logInStatusID) " &
+                                                "VALUES (@EHID, @LogInDate, @LogOutDate, @linac, @Duration,@LogInName, @LogOutName, @LogOutStatusID, @logInStatusID)", conn)
+            'commaccept.Parameters.Add("@PClinID", SqlDbType.Int)
+            'commaccept.Parameters("@PClinID").Value = CHID
+            commaccept.Parameters.Add("@EHID", SqlDbType.Int)
+            commaccept.Parameters("@EHID").Value = EHID
             commaccept.Parameters.Add("@LogInDate", SqlDbType.DateTime)
             commaccept.Parameters("@LogInDate").Value = StartTime
             commaccept.Parameters.Add("@LogOutDate", SqlDbType.DateTime)
@@ -183,7 +190,8 @@ Namespace DavesCode
             Dim time As DateTime
             time = Now()
             Dim reader As SqlDataReader
-            Dim CID As Integer
+            'Dim CID As Integer
+            Dim EHID As Integer
             Dim CTID As Integer
             'Dim ClinD As Integer
             Dim StatusID As Integer = 0
@@ -196,19 +204,22 @@ Namespace DavesCode
             'Clinicalcomment = Application(BoxChanged)
             conn = New SqlConnection(connectionString)
 
-            commCAuthID = New SqlCommand("Select CHandID, LogOutStatusID from ClinicalHandover where CHandID  = (Select max(CHandID) as lastrecord from ClinicalHandover where linac=@linac)", conn)
+            'commCAuthID = New SqlCommand("Select CHandID, LogOutStatusID from ClinicalHandover where CHandID  = (Select max(CHandID) as lastrecord from ClinicalHandover where linac=@linac)", conn)
+            commCAuthID = New SqlCommand("Select HandoverID, LogOutStatusID from HandoverEnergies where HandoverID  = (Select max(HandoverID) as lastrecord from HandoverEnergies where linac=@linac)", conn)
             commCAuthID.Parameters.Add("@linac", SqlDbType.NVarChar, 10)
             commCAuthID.Parameters("@linac").Value = LinacName
             conn.Open()
-            CID = 0
+            'CID = 0
+            EHID = 0
             reader = commCAuthID.ExecuteReader()
             If reader.Read() Then
-                CID = reader.Item("CHandID")
+                'CID = reader.Item("CHandID")
+                EHID = reader.Item("HandoverID")
                 CTID = reader.Item("LogOutStatusID")
                 reader.Close()
                 conn.Close()
             End If
-            If Not CID = 0 Then
+            If Not EHID = 0 Then
                 'Remove user name as this is not the correct name anyway
                 commCAuthID = New SqlCommand("Select StateID from LinacStatus where StateID  = (Select max(StateID) as lastrecord from LinacStatus where linac=@linac)", conn)
                 commCAuthID.Parameters.Add("@linac", SqlDbType.NVarChar, 10)
@@ -218,15 +229,20 @@ Namespace DavesCode
                 If reader.Read() Then
                     StatusID = reader.Item("StateID")
 
-                    reader.Close()
-                    conn.Close()
-                End If
 
-                commclin = New SqlCommand("INSERT INTO ClinicalTable (PreClinID,LinacStatusID, clinComment,linac, DateTime, Username) " &
-                                    "VALUES ( @PreclinID, @LinacStatusID,@clincomment, @linac, @DateTime, @UserName)", conn)
+                End If
+                reader.Close()
+                conn.Close()
+
+                'commclin = New SqlCommand("INSERT INTO ClinicalTable (PreClinID,LinacStatusID, clinComment,linac, DateTime, Username) " &
+                '                    "VALUES ( @PreclinID, @LinacStatusID,@clincomment, @linac, @DateTime, @UserName)", conn)
+                commclin = New SqlCommand("INSERT INTO ClinicalTable (PreClinID, EHID,LinacStatusID, clinComment,linac, DateTime, Username) " &
+                                   "VALUES (@PreClinID, @EHID, @LinacStatusID,@clincomment, @linac, @DateTime, @UserName)", conn)
 
                 commclin.Parameters.Add("@PreClinID", SqlDbType.Int)
-                commclin.Parameters("@PreclinID").Value = CID
+                commclin.Parameters("@PreclinID").Value = 0 ' Preclin does not accept nulls
+                commclin.Parameters.Add("@EHID", SqlDbType.Int)
+                commclin.Parameters("@EHID").Value = EHID
                 commclin.Parameters.Add("@LinacStatusID", SqlDbType.Int)
                 commclin.Parameters("@LinacStatusID").Value = StatusID
                 commclin.Parameters.Add("@clinComment", SqlDbType.NVarChar, 250)

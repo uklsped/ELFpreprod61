@@ -39,10 +39,14 @@ Partial Class EnergyDisplayuc
 
         'Dim query As String = "Select distinct handoverID, MV6, MV6fff,  MV10,MV10FFF, MeV4,  MeV6, MeV8, " &
         '                  "MeV10, MeV12, MeV15, MeV18, MeV20, iView, XVI from HandoverEnergies e  left outer join clinicalhandover r on e.handoverid=r.ehandid where r.CHandID  = (Select max(CHandID) as lastrecord from ClinicalHandover where linac=@linac)"
-        Dim query As String = "select HandoverId, MV6,ISNULL(MV6FFF, 0) as ""MV6FFF"",MV10,ISNULL(MV10FFF, 0) as ""MV10FFF"",ISNULL(MeV4,0) as ""MeV4"", MEV6" & _
-        ", MEV8, MeV10, MeV12, MeV15, MeV18, MeV20, iView, XVI" & _
-        " from HandoverEnergies e  left outer join clinicalhandover r on e.handoverid=r.ehandid where r.CHandID  = (Select max(CHandID) as lastrecord from ClinicalHandover where linac=@linac)"
+        'Dim query As String = "select HandoverId, MV6,ISNULL(MV6FFF, 0) as ""MV6FFF"",MV10,ISNULL(MV10FFF, 0) as ""MV10FFF"",ISNULL(MeV4,0) as ""MeV4"", MEV6" & _
+        '", MEV8, MeV10, MeV12, MeV15, MeV18, MeV20, iView, XVI" & _
+        '" from HandoverEnergies e  left outer join clinicalhandover r on e.handoverid=r.ehandid where r.CHandID  = (Select max(CHandID) as lastrecord from ClinicalHandover where linac=@linac)"
         'Dim query As String = "SELECT *  FROM [HandoverEnergies] where handoverid = (Select Max(handoverid) as mancount from [handoverenergies] where linac=@linac)"
+        'All energies and imaging now in handover table.
+        Dim query As String = "select HandoverId, MV6,ISNULL(MV6FFF, 0) as ""MV6FFF"",MV10,ISNULL(MV10FFF, 0) as ""MV10FFF"",ISNULL(MeV4,0) as ""MeV4"", MEV6" &
+        ", MEV8, MeV10, MeV12, MeV15, MeV18, MeV20, iView, XVI" &
+        " from HandoverEnergies where HandoverID  = (Select max(HandoverID) as lastrecord from HandoverEnergies where linac=@linac)"
         SqlDataSource1 = QuerySqlConnection(MachineName, query)
         GridView2.DataSource = SqlDataSource1
         GridView2.DataBind()
@@ -62,23 +66,24 @@ Partial Class EnergyDisplayuc
         'End Select
         GridView2.Columns(13).Visible = False
         Select Case MachineName
-            Case "LA1"
-                For index As Integer = 1 To 4
-                    GridView2.Columns(index).Visible = False
-                Next
+            'LAs decommisioned
+            'Case "LA1"
+            '    For index As Integer = 1 To 4
+            '        GridView2.Columns(index).Visible = False
+            '    Next
 
-            Case "LA2", "LA3"
-                For index As Integer = 1 To 4
-                    GridView2.Columns(index).Visible = False
-                Next
-                GridView2.Columns(2).Visible = True
-            Case "LA4"
+            'Case "LA2", "LA3"
+            '    For index As Integer = 1 To 4
+            '        GridView2.Columns(index).Visible = False
+            '    Next
+            '    GridView2.Columns(2).Visible = True
+            'Case "LA4"
 
-                For index As Integer = 1 To 11
-                    GridView2.Columns(index).Visible = False
-                Next
-                GridView2.Columns(2).Visible = True
-                GridView2.Columns(13).Visible = True
+            '    For index As Integer = 1 To 11
+            '        GridView2.Columns(index).Visible = False
+            '    Next
+            '    GridView2.Columns(2).Visible = True
+            '    GridView2.Columns(13).Visible = True
             Case "E1", "E2", "B1", "B2"
                 GridView2.Columns(13).Visible = True
                 For index As Integer = 10 To 11

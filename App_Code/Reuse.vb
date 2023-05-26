@@ -109,7 +109,6 @@ Namespace DavesCode
 
         End Sub
 
-
         Public Shared Function StringBuilder(ByVal faulttype As String, ByVal BeginDate As String, StopDate As String) As String
             Dim builder As New StringBuilder
             Dim statement As String
@@ -895,6 +894,7 @@ Namespace DavesCode
             Select Case PreviousState
                 Case 0
                     StatusNow = New SqlCommand("SELECT state, username, usergroup, stateID FROM [LinacStatus] where stateID = (Select max(stateID) as lastrecord from [LinacStatus] where linac=@linac)", conn)
+                    StatusNow.CommandTimeout = 300
                 Case 1
                     StatusNow = New SqlCommand("SELECT TOP 1 * From (select Top 2 * from (select * from [LinacStatus] where linac=@linac) as a ORDER BY a.stateid DESC)  as x ORDER BY x.stateid", conn)
                 Case 2
@@ -963,6 +963,7 @@ Namespace DavesCode
         End Function
 
         Public Shared Function GetLastTime(ByVal linac As String, ByVal index As Integer) As String
+
             Dim time As DateTime
             time = Now()
             Dim PreviousState As Integer = index
@@ -996,7 +997,8 @@ Namespace DavesCode
             'DavesCode.Reuse.RecordStates(linacName, 0, "getlasttime1", 0)
 
             'If (Not HttpContext.Current.Application(LogOn) Is Nothing) Then
-            '    AppState = CInt(HttpContext.Current.Application(LogOn))
+            '    AppState = CInt(HttpContext.Current.
+            '    Application(LogOn))
             'End If
 
             'DavesCode.Reuse.RecordStates(linacName, 0, "getlasttime2", 0)
@@ -1033,18 +1035,19 @@ Namespace DavesCode
 
                 'oldtime = oldtime.Date.AddDays(-1) 'test line
                 oldDayofyear = oldtime.DayOfYear
-                    newDayofyear = time.DayOfYear
+                newDayofyear = time.DayOfYear
 
 
-                    If activity = "102" Then
-                        nowstatus = "Ignore"
-                    ElseIf Not newDayofyear = oldDayofyear Then
-                        nowstatus = ENDOFDAY
-                    ElseIf newDayofyear = oldDayofyear Then
-                        nowstatus = "Ignore"
-                    End If
-                Else
-                    nowstatus = "Error"
+                If activity = "102" Then
+                    nowstatus = "Ignore"
+                ElseIf Not newDayofyear = oldDayofyear Then
+                    nowstatus = ENDOFDAY
+                ElseIf newDayofyear = oldDayofyear Then
+                    nowstatus = "Ignore"
+                End If
+            Else
+                nowstatus = "Error"
+                'nowstatus = "Ignore"
             End If
             reader.Close()
             conn.Close()
@@ -1314,8 +1317,9 @@ Namespace DavesCode
             Dim connectionString As String = ConfigurationManager.ConnectionStrings("connectionstring").ConnectionString
             'Dim Machinestatus As SqlCommand
             Dim StatusNow As SqlCommand
-
+            SqlConnection.ClearAllPools()
             conn = New SqlConnection(connectionString)
+
             Try
                 Select Case PreviousState
                     Case 0
@@ -1344,12 +1348,14 @@ Namespace DavesCode
                     lastusergroup = reader.Item("usergroup")
                     laststateid = reader.Item("stateID")
                 End If
+                reader.Close()
+
             Catch ex As Exception
                 DavesCode.NewFaultHandling.LogError(ex)
                 'RaiseLoadError()
 
             Finally
-                reader.Close()
+                'reader.Close()
                 conn.Close()
             End Try
 

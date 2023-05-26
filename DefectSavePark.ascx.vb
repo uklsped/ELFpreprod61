@@ -353,9 +353,9 @@ Partial Class DefectSavePark
                         Case 1, 9
                             Result = DavesCode.NewEngRunup.CommitRunup(GridViewEnergy, GridViewImage, LinacName, ParentControl, UserInfo, ParentControlComment, Valid, True, False, FaultParams)
 
-                        Case 2
-                            DavesCode.Reuse.ReturnImaging(iView, XVI, grdviewI, LinacName)
-                            Result = DavesCode.NewPreClinRunup.CommitPreClin(LinacName, UserInfo, ParentControlComment, iView, XVI, Valid, True, FaultParams)
+                        'Case 2
+                        '    DavesCode.Reuse.ReturnImaging(iView, XVI, grdviewI, LinacName)
+                        '    Result = DavesCode.NewPreClinRunup.CommitPreClin(LinacName, UserInfo, ParentControlComment, iView, XVI, Valid, True, FaultParams)
                         Case 3
                             Result = DavesCode.NewCommitClinical.CommitClinical(LinacName, UserInfo, True, FaultParams, False)
 

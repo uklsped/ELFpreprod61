@@ -46,7 +46,7 @@ Namespace DavesCode
                     incidentfault.Parameters("@Linac").Value = FaultP.Linac
                     incidentfault.Parameters.Add("@IncidentID", System.Data.SqlDbType.Int)
                     incidentfault.Parameters("@IncidentID").Value = FaultP.SelectedIncident
-                    incidentfault.Parameters.Add("@BSUHID", System.Data.SqlDbType.VarChar, 7)
+                    incidentfault.Parameters.Add("@BSUHID", System.Data.SqlDbType.NVarChar, 15)
                     incidentfault.Parameters("@BSUHID").Value = FaultP.PatientID
                     incidentfault.Parameters.Add("@ConcessionNumber", System.Data.SqlDbType.NVarChar, 25)
                     incidentfault.Parameters("@ConcessionNumber").Value = FaultP.ConcessionNumber
@@ -401,7 +401,7 @@ Namespace DavesCode
                     incidentfault.Parameters("@Linac").Value = FaultP.Linac
                     incidentfault.Parameters.Add("@IncidentID", System.Data.SqlDbType.Int)
                     incidentfault.Parameters("@IncidentID").Value = IncidentID
-                    incidentfault.Parameters.Add("@BSUHID", System.Data.SqlDbType.VarChar, 7)
+                    incidentfault.Parameters.Add("@BSUHID", System.Data.SqlDbType.NVarChar, 15)
                     incidentfault.Parameters("@BSUHID").Value = FaultP.PatientID
                     incidentfault.Parameters.Add("@ConcessionNumber", System.Data.SqlDbType.NVarChar, 25)
                     incidentfault.Parameters("@ConcessionNumber").Value = FaultP.ConcessionNumber
@@ -599,7 +599,7 @@ Namespace DavesCode
                 incidentfault.Parameters("@Linac").Value = FaultP.Linac
                 incidentfault.Parameters.Add("@IncidentID", System.Data.SqlDbType.Int)
                 incidentfault.Parameters("@IncidentID").Value = IncidentID
-                incidentfault.Parameters.Add("@BSUHID", System.Data.SqlDbType.VarChar, 7)
+                incidentfault.Parameters.Add("@BSUHID", System.Data.SqlDbType.NVarChar, 15)
                 incidentfault.Parameters("@BSUHID").Value = FaultP.PatientID
                 incidentfault.Parameters.Add("@ConcessionNumber", System.Data.SqlDbType.NVarChar, 25)
                 incidentfault.Parameters("@ConcessionNumber").Value = FaultP.ConcessionNumber
@@ -690,7 +690,8 @@ Namespace DavesCode
                 IncidentID = reader.Item("IncidentID").ToString()
 
             End If
-
+            reader.Close()
+            conn.Close()
             Return IncidentID
 
         End Function
@@ -716,7 +717,8 @@ Namespace DavesCode
                 openfault = True
 
             End If
-
+            reader.Close()
+            conn.Close()
             Return openfault
         End Function
 
@@ -738,7 +740,8 @@ Namespace DavesCode
                 reader.Read()
                 faultActivity = reader.Item("Activity").ToString()
             End If
-
+            reader.Close()
+            conn.Close()
             Return faultActivity
         End Function
         Public Shared Sub UpdateLastNonFaultState(ByVal Linac As String)
@@ -759,6 +762,7 @@ Namespace DavesCode
                 reader.Read()
                 Faultid = reader.Item("FaultID").ToString()
             End If
+            reader.Close()
             conn.Close()
             conn.Open()
             existingfault = New SqlCommand("Update [ReportFault] SET LastState=@LastState WHERE FaultID=@FaultID", conn)
@@ -787,6 +791,8 @@ Namespace DavesCode
                 reader.Read()
                 LastNonFaultState = reader.Item("LastState").ToString()
             End If
+            reader.Close()
+            conn.Close()
             If LastNonFaultState = "Clinical" Then
                 LastNonFaultState = "Suspended"
             End If
@@ -814,6 +820,8 @@ Namespace DavesCode
             If LastNonFaultState = "Clinical" Then
                 LastNonFaultState = "Suspended"
             End If
+            reader.Close()
+            conn.Close()
             Return LastNonFaultState
         End Function
         Public Shared Sub LogError(ex As Exception)

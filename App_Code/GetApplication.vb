@@ -33,12 +33,13 @@ Namespace DavesCode
                     LoggedOn = reader.Item("LoggedOn")
 
                 End If
+                reader.Close()
             Catch ex As Exception
                 DavesCode.NewFaultHandling.LogError(ex)
 
 
             Finally
-                reader.Close()
+                'reader.Close()
                 conn.Close()
             End Try
 

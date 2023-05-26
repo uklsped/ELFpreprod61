@@ -66,14 +66,14 @@ Partial Public Class ClinicalUserControl
         Page = Me.Page
         mpContentPlaceHolder =
         CType(Page.Master.FindControl("ContentPlaceHolder1"), ContentPlaceHolder)
-        If mpContentPlaceHolder IsNot Nothing Then
-            tabcontainer1 = CType(mpContentPlaceHolder.
-                FindControl("tcl"), TabContainer)
-            If tabcontainer1 IsNot Nothing Then
-                Dim panelcontrol As TabPanel = tabcontainer1.FindControl("TabPanel3")
+        'If mpContentPlaceHolder IsNot Nothing Then
+        '    tabcontainer1 = CType(mpContentPlaceHolder.
+        '        FindControl("tcl"), TabContainer)
+        '    If tabcontainer1 IsNot Nothing Then
+        '        Dim panelcontrol As TabPanel = tabcontainer1.FindControl("TabPanel3")
 
-            End If
-        End If
+        '    End If
+        'End If
 
         AddHandler WriteDatauc2.UserApproved, AddressOf UserApprovedEvent
 
@@ -189,9 +189,12 @@ Partial Public Class ClinicalUserControl
 
         Dim SqlDateSourceComment As New SqlDataSource()
 
-        Dim query As String = "select convert(Varchar(5),c.DateTime, 108) as DateTime, c.ClinComment from handoverenergies e left outer join clinicalhandover r on e.handoverid=r.ehandid " &
-        "Left outer join ClinicalTable c on c.PreClinID = r.CHandID where e.handoverid = (Select Max(handoverid) as mancount from [handoverenergies] where linac=@linac) and " &
-        "c.PreClinID = (Select Max(CHandID) as mancount from [ClinicalHandover] where linac=@linac and not c.Clincomment = '') order by c.datetime desc"
+        'Dim query As String = "select convert(Varchar(5),c.DateTime, 108) as DateTime, c.ClinComment from handoverenergies e left outer join clinicalhandover r on e.handoverid=r.ehandid " &
+        '"Left outer join ClinicalTable c on c.PreClinID = r.CHandID where e.handoverid = (Select Max(handoverid) as mancount from [handoverenergies] where linac=@linac) and " &
+        '"c.PreClinID = (Select Max(CHandID) as mancount from [ClinicalHandover] where linac=@linac and not c.Clincomment = '') order by c.datetime desc"
+        Dim query As String = "select convert(Varchar(5),c.DateTime, 108) as DateTime, c.ClinComment " &
+        "from ClinicalTable c where c.EHID = (Select Max(handoverid) as mancount from [handoverenergies]) and not c.Clincomment = '' and linac=@linac " &
+         "order by c.datetime desc"
 
         SqlDateSourceComment = QuerySqlConnection(LinacName, query)
 

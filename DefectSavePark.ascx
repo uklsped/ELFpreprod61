@@ -71,7 +71,7 @@
             </tr>
             <tr><td><asp:Label ID="PatientIDLabel" runat="server" Text="Patient ID: "></asp:Label></td>
                 <td colspan="3"><asp:TextBox ID="PatientIDBox" Text="" runat="server"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="RegularExpressionPatient" runat="server" forecolor="Red" ControlToValidate="PatientIDBox" ValidationExpression="^\d{7}$" Display="None"  ErrorMessage="Please enter a BSUH ID" validationgroup="Tomodefect"></asp:RegularExpressionValidator> </td>
+                        <asp:RegularExpressionValidator ID="RegularExpressionPatient" runat="server" forecolor="Red" ControlToValidate="PatientIDBox" ValidationExpression="^[a-zA-Z0-9]{4,15}$" Display="None"  ErrorMessage="Please enter a valid patient ID" validationgroup="Tomodefect"></asp:RegularExpressionValidator> </td>
             
             </tr>
             

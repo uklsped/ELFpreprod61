@@ -111,12 +111,14 @@ Partial Class ViewFaultsuc
             'have to set page index before binding data
             GridView2.PageIndex = 0
             GridView2.DataBind()
+            CheckEmptyGrid(GridView2)
         Else
             GridView1.DataSource = returntable
             GridView1.Caption = DavesCode.Reuse.StringBuilder(faultType, StartingDate, EndingDate)
             'have to set page index before binding data
             GridView1.PageIndex = 0
             GridView1.DataBind()
+            CheckEmptyGrid(GridView1)
         End If
         RadioButtonFault.SelectedIndex = -1
 
@@ -515,6 +517,37 @@ Partial Class ViewFaultsuc
         End If
         If Not Leave Is Nothing Then
             Leave.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Leave, "") + ";this.value='Wait...';this.disabled = true; this.style.display='block';")
+        End If
+    End Sub
+    Protected Sub CheckEmptyGrid(ByVal grid As WebControls.GridView)
+        If grid.Rows.Count = 0 And Not grid.DataSource Is Nothing Then
+            Dim dt As Object = Nothing
+            If grid.DataSource.GetType Is GetType(Data.DataSet) Then
+                dt = New System.Data.DataSet
+                dt = CType(grid.DataSource, System.Data.DataSet).Tables(0).Clone()
+            ElseIf grid.DataSource.GetType Is GetType(Data.DataTable) Then
+                dt = New System.Data.DataTable
+                dt = CType(grid.DataSource, System.Data.DataTable).Clone()
+            ElseIf grid.DataSource.GetType Is GetType(Data.DataView) Then
+                dt = New System.Data.DataView
+                dt = CType(grid.DataSource, System.Data.DataView).Table.Clone
+            End If
+            dt.Rows.Add(dt.NewRow())
+            grid.DataSource = dt
+            grid.DataBind()
+            Dim columnsCount As Integer
+            Dim tCell As New TableCell()
+            columnsCount = grid.Columns.Count
+            grid.Rows(0).Cells.Clear()
+            grid.Rows(0).Cells.Add(tCell)
+            grid.Rows(0).Cells(0).ColumnSpan = columnsCount
+
+
+            grid.Rows(0).Cells(0).Text = "No Records To Display"
+            grid.Rows(0).Cells(0).HorizontalAlign = HorizontalAlign.Center
+            grid.Rows(0).Cells(0).ForeColor = Drawing.Color.Black
+            grid.Rows(0).Cells(0).Font.Bold = True
+
         End If
     End Sub
 End Class

@@ -91,7 +91,7 @@
             <td>Patient ID: </td>
             <td>
                 <asp:TextBox ID="PatientIDBox" runat="server"></asp:TextBox>
-                <asp:RegularExpressionValidator ID="RegularExpressionPatient" runat="server" ControlToValidate="PatientIDBox" ValidationExpression="^\d{7}$" Display="None" ValidationGroup="defect" ErrorMessage="Please enter a BSUH ID in the correct format" SetFocusOnError="true"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionPatient" runat="server" ControlToValidate="PatientIDBox" ValidationExpression="^[a-zA-Z0-9]{4,15}$" Display="None" ValidationGroup="defect" ErrorMessage="Please enter a valid patient ID" SetFocusOnError="true"></asp:RegularExpressionValidator>
             </td>
             <td colspan="2"></td>
         </tr>

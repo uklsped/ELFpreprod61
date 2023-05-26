@@ -22,41 +22,46 @@ Namespace DavesCode
         ''' <param name="lock">if set to <c>true</c> [lock]. Is the Tab locked</param>
         ''' <returns>Returns Successful which is a Boolean. So calling functions should test this</returns>
         Public Shared Function CommitRunup(ByVal GridviewE As GridView, ByVal grdviewI As GridView, ByVal LinacName As String, ByVal tabby As String, ByVal LogOffName As String, ByVal TextBoxc As String, ByVal Valid As Boolean, ByVal Fault As Boolean, ByVal lock As Boolean, ByVal FaultParams As DavesCode.FaultParameters) As Boolean
-            Dim usergroupselected As Integer = 2
-            Dim Reason As Integer = 2
-            If tabby = 9 Then
-                usergroupselected = 3
+            'Dim usergroupselected As Integer = 2
+            'Dim Reason As Integer = 2
+            'If tabby = 9 Then
+            '    usergroupselected = 3
 
-            End If
-            Dim iView As Boolean = False
-            Dim XVI As Boolean = False
+            'End If
+            'Dim iView As Boolean = False
+            'Dim XVI As Boolean = False
             Dim Successful As Boolean = False
 
             Try
                 Dim connectionString As String = ConfigurationManager.ConnectionStrings("connectionstring").ConnectionString
                 Using myscope As TransactionScope = New TransactionScope()
-                    If Not Fault Then
-                        'LA is same as B1 now so remove first if 9/4/19
-                        'If LinacName Like "LA?" Then
-                        '    CommitRunupNew(GridviewE, LinacName, tabby, LogOffName, TextBoxc, Valid, Fault, lock, connectionString)
-                        'Else
-                        If LinacName Like "T?" Then
-                                CommitRunupNew(GridviewE, LinacName, tabby, LogOffName, TextBoxc, Valid, Fault, lock, connectionString)
-                            Reuse.MachineStateNew(LogOffName, usergroupselected, LinacName, Reason, lock, True, connectionString)
-                        Else
-                                CommitRunupNew(GridviewE, LinacName, tabby, LogOffName, TextBoxc, Valid, Fault, False, connectionString)
-                            Reuse.MachineStateNew(LogOffName, usergroupselected, LinacName, Reason, lock, True, connectionString)
-                            Reuse.ReturnImaging(iView, XVI, grdviewI, LinacName)
-                            End If
-
-                            NewPreClinRunup.CommitPreClinNew(LinacName, LogOffName, "", iView, XVI, Valid, Fault, connectionString)
-
-                        'End If
-                    Else
-                        CommitRunupNew(GridviewE, LinacName, tabby, LogOffName, TextBoxc, Valid, Fault, lock, connectionString)
+                    CommitRunupNew(GridviewE, grdviewI, LinacName, tabby, LogOffName, TextBoxc, Valid, Fault, lock, connectionString)
+                    If Fault Then
                         NewFaultHandling.InsertMajorFault(FaultParams, connectionString)
-
                     End If
+                    'If Not Fault Then
+                    '    ''LA is same as B1 now so remove first if 9/4/19
+                    '    ''If LinacName Like "LA?" Then
+                    '    ''    CommitRunupNew(GridviewE, LinacName, tabby, LogOffName, TextBoxc, Valid, Fault, lock, connectionString)
+                    '    ''Else
+                    '    'If LinacName Like "T?" Then
+                    '    '    CommitRunupNew(GridviewE, LinacName, tabby, LogOffName, TextBoxc, Valid, Fault, lock, connectionString)
+                    '    '    'Reuse.MachineStateNew(LogOffName, usergroupselected, LinacName, Reason, lock, True, connectionString)
+                    '    'Else
+                    '    '    CommitRunupNew(GridviewE, LinacName, tabby, LogOffName, TextBoxc, Valid, Fault, False, connectionString)
+                    '    '    'Reuse.MachineStateNew(LogOffName, usergroupselected, LinacName, Reason, lock, True, connectionString)
+                    '    ''Reuse.ReturnImaging(iView, XVI, grdviewI, LinacName)
+                    '    'End If
+
+                    '    ''NewPreClinRunup.CommitPreClinNew(LinacName, LogOffName, "", iView, XVI, Valid, Fault, connectionString)
+
+                    '    ''End If
+                    '    'CommitRunupNew(GridviewE, grdviewI, LinacName, tabby, LogOffName, TextBoxc, Valid, Fault, lock, connectionString)
+                    'Else
+                    '    'CommitRunupNew(GridviewE, grdviewI, LinacName, tabby, LogOffName, TextBoxc, Valid, Fault, lock, connectionString)
+                    '    NewFaultHandling.InsertMajorFault(FaultParams, connectionString)
+
+                    'End If
                     myscope.Complete()
                     Successful = True
 
@@ -80,13 +85,16 @@ Namespace DavesCode
         ''' <param name="lock">if set to <c>true</c> [lock].</param>
         ''' <param name="ConnectionString">The connection string.</param>
         ''' <returns></returns>
-        Public Shared Function CommitRunupNew(ByVal GridviewE As GridView, ByVal LinacName As String, ByVal tabby As String, ByVal LogOffName As String, ByVal TextBox As String, ByVal Valid As Boolean, ByVal Fault As Boolean, ByVal lock As Boolean, ByVal ConnectionString As String) As String
+        Public Shared Function CommitRunupNew(ByVal GridviewE As GridView, grdviewI As GridView, ByVal LinacName As String, ByVal tabby As String, ByVal LogOffName As String, ByVal TextBox As String, ByVal Valid As Boolean, ByVal Fault As Boolean, ByVal lock As Boolean, ByVal ConnectionString As String) As String
+            Dim iView As Boolean = False
+            Dim XVI As Boolean = False
             Dim faulttab As Integer = -1
             Dim time As DateTime
             time = Now()
             Dim commitusername As String = LogOffName
             Dim LogInName As String = ""
             Dim cb As CheckBox
+            Dim cbI As CheckBox
             Dim conn As SqlConnection
             Dim comm As SqlCommand
             'Dim TextBox As String = TextBoxc
@@ -104,6 +112,7 @@ Namespace DavesCode
             Dim FaultState As String = String.Empty 'For recovery
             Dim UserReason As Integer = 7 'most common reason
             'Dim Activity As Integer = 2
+
             Dim Runup As Integer
             If tablabel = 1 Then
                 Runup = 1
@@ -137,11 +146,12 @@ Namespace DavesCode
                 tablabel = faulttab
             Else
                 If Approved Then
-                    If tablabel = 1 Then
-                        State = "Engineering Approved"
-                    Else
-                        State = "Radiographer Approved"
-                    End If
+                    'If tablabel = 1 Then
+                    '    State = "Engineering Approved"
+                    'Else
+                    '    State = "Radiographer Approved"
+                    'End If
+                    State = "Suspended"
                 Else
                     'added 5/6/16 to set reason to end of day for midnight reset
                     If commitusername = "System" Then
@@ -164,119 +174,118 @@ Namespace DavesCode
             'Had to amend this to insert extra energies for E1 4/7/17
             'new table for handoverenergies
 
-
             comm = New SqlCommand("INSERT INTO HandoverEnergies ( MV6, MV6FFF, MV10, MV10FFF,MeV4, MeV6, MeV8, MeV10, MeV12, MeV15, MeV18, " &
-                                  "MeV20, Comment, LogOutName, LogOutDate, linac, LogInDate, Duration,LogInStatusID, LogOutStatusID, Approved, LogInName) " &
-                                  "VALUES ( @MV6, @MV6FFF, @MV10,@MV10FFF, @MeV4, @MeV6, @MeV8, @MeV10, @MeV12, @MeV15, @MeV18, @MeV20,  @Comment, @LogOutName, " &
+                                  "MeV20, iView, XVI,Comment, LogOutName, LogOutDate, linac, LogInDate, Duration,LogInStatusID, LogOutStatusID, Approved, LogInName) " &
+                                  "VALUES ( @MV6, @MV6FFF, @MV10,@MV10FFF, @MeV4, @MeV6, @MeV8, @MeV10, @MeV12, @MeV15, @MeV18, @MeV20, @iView, @XVI,  @Comment, @LogOutName, " &
                                   "@LogOutDate, @linac, @LogInDate, @Duration,@LogInStatusID, @LogOutStatusID, @Approved, @LogInName)", conn)
 
             Select Case tablabel
                 Case 1
                     Select Case machinename
 
-                        Case "LA1"
-                            cb = CType(GridView1.Rows(0).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MV6", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV6").Value = cb.Checked
-                            comm.Parameters.Add("@MV6FFF", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV6FFF").Value = False
-                            comm.Parameters.Add("@MV10", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV10").Value = False
-                            comm.Parameters.Add("@MV10FFF", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV10FFF").Value = False
-                            comm.Parameters.Add("@MeV4", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV4").Value = False
-                            cb = CType(GridView1.Rows(1).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV6", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV6").Value = cb.Checked
-                            cb = CType(GridView1.Rows(2).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV8", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV8").Value = cb.Checked
-                            cb = CType(GridView1.Rows(3).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV10", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV10").Value = cb.Checked
-                            cb = CType(GridView1.Rows(4).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV12", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV12").Value = cb.Checked
-                            cb = CType(GridView1.Rows(5).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV15", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV15").Value = cb.Checked
-                            cb = CType(GridView1.Rows(6).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV18", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV18").Value = cb.Checked
-                            cb = CType(GridView1.Rows(7).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV20").Value = cb.Checked
+                        'Case "LA1"
+                        '    cb = CType(GridView1.Rows(0).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MV6", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MV6").Value = cb.Checked
+                        '    comm.Parameters.Add("@MV6FFF", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MV6FFF").Value = False
+                        '    comm.Parameters.Add("@MV10", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MV10").Value = False
+                        '    comm.Parameters.Add("@MV10FFF", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MV10FFF").Value = False
+                        '    comm.Parameters.Add("@MeV4", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV4").Value = False
+                        '    cb = CType(GridView1.Rows(1).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV6", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV6").Value = cb.Checked
+                        '    cb = CType(GridView1.Rows(2).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV8", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV8").Value = cb.Checked
+                        '    cb = CType(GridView1.Rows(3).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV10", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV10").Value = cb.Checked
+                        '    cb = CType(GridView1.Rows(4).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV12", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV12").Value = cb.Checked
+                        '    cb = CType(GridView1.Rows(5).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV15", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV15").Value = cb.Checked
+                        '    cb = CType(GridView1.Rows(6).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV18", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV18").Value = cb.Checked
+                        '    cb = CType(GridView1.Rows(7).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV20").Value = cb.Checked
 
-                        Case "LA4"
-                            cb = CType(GridView1.Rows(0).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MV6", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV6").Value = cb.Checked
-                            comm.Parameters.Add("@MV6FFF", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV6FFF").Value = False
-                            cb = CType(GridView1.Rows(1).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MV10", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV10").Value = cb.Checked
-                            comm.Parameters.Add("@MV10FFF", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV10FFF").Value = False
-                            comm.Parameters.Add("@MeV4", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV4").Value = False
-                            comm.Parameters.Add("@MeV6", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV6").Value = False
+                        'Case "LA4"
+                        '    cb = CType(GridView1.Rows(0).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MV6", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MV6").Value = cb.Checked
+                        '    comm.Parameters.Add("@MV6FFF", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MV6FFF").Value = False
+                        '    cb = CType(GridView1.Rows(1).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MV10", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MV10").Value = cb.Checked
+                        '    comm.Parameters.Add("@MV10FFF", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MV10FFF").Value = False
+                        '    comm.Parameters.Add("@MeV4", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV4").Value = False
+                        '    comm.Parameters.Add("@MeV6", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV6").Value = False
 
-                            comm.Parameters.Add("@MeV8", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV8").Value = False
+                        '    comm.Parameters.Add("@MeV8", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV8").Value = False
 
-                            comm.Parameters.Add("@MeV10", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV10").Value = False
+                        '    comm.Parameters.Add("@MeV10", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV10").Value = False
 
-                            comm.Parameters.Add("@MeV12", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV12").Value = False
+                        '    comm.Parameters.Add("@MeV12", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV12").Value = False
 
-                            comm.Parameters.Add("@MeV15", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV15").Value = False
+                        '    comm.Parameters.Add("@MeV15", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV15").Value = False
 
-                            comm.Parameters.Add("@MeV18", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV18").Value = False
+                        '    comm.Parameters.Add("@MeV18", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV18").Value = False
 
-                            comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV20").Value = False
+                        '    comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV20").Value = False
 
-                        Case "LA2", "LA3"
+                        'Case "LA2", "LA3"
 
-                            cb = CType(GridView1.Rows(0).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MV6", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV6").Value = cb.Checked
-                            comm.Parameters.Add("@MV6FFF", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV6FFF").Value = False
-                            cb = CType(GridView1.Rows(1).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MV10", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV10").Value = cb.Checked
-                            comm.Parameters.Add("@MV10FFF", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV10FFF").Value = False
-                            comm.Parameters.Add("@MeV4", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV4").Value = False
-                            cb = CType(GridView1.Rows(2).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV6", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV6").Value = cb.Checked
-                            cb = CType(GridView1.Rows(3).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV8", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV8").Value = cb.Checked
-                            cb = CType(GridView1.Rows(4).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV10", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV10").Value = cb.Checked
-                            cb = CType(GridView1.Rows(5).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV12", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV12").Value = cb.Checked
-                            cb = CType(GridView1.Rows(6).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV15", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV15").Value = cb.Checked
-                            cb = CType(GridView1.Rows(7).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV18", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV18").Value = cb.Checked
-                            cb = CType(GridView1.Rows(8).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV20").Value = cb.Checked
+                        '    cb = CType(GridView1.Rows(0).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MV6", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MV6").Value = cb.Checked
+                        '    comm.Parameters.Add("@MV6FFF", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MV6FFF").Value = False
+                        '    cb = CType(GridView1.Rows(1).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MV10", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MV10").Value = cb.Checked
+                        '    comm.Parameters.Add("@MV10FFF", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MV10FFF").Value = False
+                        '    comm.Parameters.Add("@MeV4", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV4").Value = False
+                        '    cb = CType(GridView1.Rows(2).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV6", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV6").Value = cb.Checked
+                        '    cb = CType(GridView1.Rows(3).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV8", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV8").Value = cb.Checked
+                        '    cb = CType(GridView1.Rows(4).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV10", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV10").Value = cb.Checked
+                        '    cb = CType(GridView1.Rows(5).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV12", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV12").Value = cb.Checked
+                        '    cb = CType(GridView1.Rows(6).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV15", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV15").Value = cb.Checked
+                        '    cb = CType(GridView1.Rows(7).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV18", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV18").Value = cb.Checked
+                        '    cb = CType(GridView1.Rows(8).FindControl("RowLevelCheckBox"), CheckBox)
+                        '    comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
+                        '    comm.Parameters("@MeV20").Value = cb.Checked
                         Case "E1", "E2", "B1", "B2"
                             cb = CType(GridView1.Rows(0).FindControl("RowLevelCheckBox"), CheckBox)
                             comm.Parameters.Add("@MV6", System.Data.SqlDbType.Bit)
@@ -312,6 +321,12 @@ Namespace DavesCode
                             comm.Parameters("@MeV18").Value = False
                             comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
                             comm.Parameters("@MeV20").Value = False
+                            cbI = CType(grdviewI.Rows(0).FindControl("RowLevelCheckBoxImage"), CheckBox)
+                            comm.Parameters.Add("@iView", System.Data.SqlDbType.Bit)
+                            comm.Parameters("@iView").Value = cbI.Checked
+                            cbI = CType(grdviewI.Rows(1).FindControl("RowLevelCheckBoxImage"), CheckBox)
+                            comm.Parameters.Add("@XVI", System.Data.SqlDbType.Bit)
+                            comm.Parameters("@XVI").Value = cbI.Checked
 
                         Case "T1", "T2", "T3"
                             comm.Parameters.Add("@MV6", System.Data.SqlDbType.Bit)
@@ -338,6 +353,10 @@ Namespace DavesCode
                             comm.Parameters("@MeV18").Value = False
                             comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
                             comm.Parameters("@MeV20").Value = False
+                            comm.Parameters.Add("@iView", System.Data.SqlDbType.Bit)
+                            comm.Parameters("@iView").Value = False
+                            comm.Parameters.Add("@XVI", System.Data.SqlDbType.Bit)
+                            comm.Parameters("@XVI").Value = False
 
                         Case Else
                     End Select
@@ -371,66 +390,71 @@ Namespace DavesCode
                             comm.Parameters("@MeV18").Value = False
                             comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
                             comm.Parameters("@MeV20").Value = False
-                        Case "LA1"
-                            cb = CType(GridView1.Rows(0).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MV6", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV6").Value = cb.Checked
-                            comm.Parameters.Add("@MV6FFF", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV6FFF").Value = False
-                            comm.Parameters.Add("@MV10", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV10").Value = False
-                            comm.Parameters.Add("@MV10FFF", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV10FFF").Value = False
-                            comm.Parameters.Add("@MeV4", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV4").Value = False
-                            comm.Parameters.Add("@MeV6", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV6").Value = False
-                            comm.Parameters.Add("@MeV8", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV8").Value = False
-                            comm.Parameters.Add("@MeV10", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV10").Value = False
-                            comm.Parameters.Add("@MeV12", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV12").Value = False
-                            comm.Parameters.Add("@MeV15", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV15").Value = False
-                            comm.Parameters.Add("@MeV18", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV18").Value = False
-                            comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV20").Value = False
+                            comm.Parameters.Add("@iView", System.Data.SqlDbType.Bit)
+                            comm.Parameters("@iView").Value = iView
+                            comm.Parameters.Add("@XVI", System.Data.SqlDbType.Bit)
+                            comm.Parameters("@XVI").Value = XVI
 
-                        Case "LA2", "LA3", "LA4"
-                            cb = CType(GridView1.Rows(0).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MV6", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV6").Value = cb.Checked
-                            comm.Parameters.Add("@MV6FFF", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV6FFF").Value = False
-                            cb = CType(GridView1.Rows(1).FindControl("RowLevelCheckBox"), CheckBox)
-                            comm.Parameters.Add("@MV10", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV10").Value = cb.Checked
-                            comm.Parameters.Add("@MV10FFF", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MV10FFF").Value = False
-                            comm.Parameters.Add("@MeV4", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV4").Value = False
-                            comm.Parameters.Add("@MeV6", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV6").Value = False
+                            'Case "LA1"
+                            '    cb = CType(GridView1.Rows(0).FindControl("RowLevelCheckBox"), CheckBox)
+                            '    comm.Parameters.Add("@MV6", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MV6").Value = cb.Checked
+                            '    comm.Parameters.Add("@MV6FFF", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MV6FFF").Value = False
+                            '    comm.Parameters.Add("@MV10", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MV10").Value = False
+                            '    comm.Parameters.Add("@MV10FFF", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MV10FFF").Value = False
+                            '    comm.Parameters.Add("@MeV4", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV4").Value = False
+                            '    comm.Parameters.Add("@MeV6", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV6").Value = False
+                            '    comm.Parameters.Add("@MeV8", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV8").Value = False
+                            '    comm.Parameters.Add("@MeV10", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV10").Value = False
+                            '    comm.Parameters.Add("@MeV12", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV12").Value = False
+                            '    comm.Parameters.Add("@MeV15", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV15").Value = False
+                            '    comm.Parameters.Add("@MeV18", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV18").Value = False
+                            '    comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV20").Value = False
 
-                            comm.Parameters.Add("@MeV8", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV8").Value = False
+                            'Case "LA2", "LA3", "LA4"
+                            '    cb = CType(GridView1.Rows(0).FindControl("RowLevelCheckBox"), CheckBox)
+                            '    comm.Parameters.Add("@MV6", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MV6").Value = cb.Checked
+                            '    comm.Parameters.Add("@MV6FFF", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MV6FFF").Value = False
+                            '    cb = CType(GridView1.Rows(1).FindControl("RowLevelCheckBox"), CheckBox)
+                            '    comm.Parameters.Add("@MV10", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MV10").Value = cb.Checked
+                            '    comm.Parameters.Add("@MV10FFF", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MV10FFF").Value = False
+                            '    comm.Parameters.Add("@MeV4", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV4").Value = False
+                            '    comm.Parameters.Add("@MeV6", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV6").Value = False
 
-                            comm.Parameters.Add("@MeV10", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV10").Value = False
+                            '    comm.Parameters.Add("@MeV8", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV8").Value = False
 
-                            comm.Parameters.Add("@MeV12", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV12").Value = False
+                            '    comm.Parameters.Add("@MeV10", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV10").Value = False
 
-                            comm.Parameters.Add("@MeV15", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV15").Value = False
+                            '    comm.Parameters.Add("@MeV12", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV12").Value = False
 
-                            comm.Parameters.Add("@MeV18", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV18").Value = False
+                            '    comm.Parameters.Add("@MeV15", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV15").Value = False
 
-                            comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
-                            comm.Parameters("@MeV20").Value = False
+                            '    comm.Parameters.Add("@MeV18", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV18").Value = False
+
+                            '    comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
+                            '    comm.Parameters("@MeV20").Value = False
 
                         Case Else
                     End Select
@@ -460,6 +484,10 @@ Namespace DavesCode
                     comm.Parameters("@MeV18").Value = False
                     comm.Parameters.Add("@MeV20", System.Data.SqlDbType.Bit)
                     comm.Parameters("@MeV20").Value = False
+                    comm.Parameters.Add("@iView", System.Data.SqlDbType.Bit)
+                    comm.Parameters("@iView").Value = False
+                    comm.Parameters.Add("@XVI", System.Data.SqlDbType.Bit)
+                    comm.Parameters("@XVI").Value = False
 
             End Select
 

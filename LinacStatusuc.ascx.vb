@@ -5,6 +5,7 @@ Partial Class LinacStatusuc
     Inherits System.Web.UI.UserControl
     Private Objfault As ViewFaultsuc
     Private RegistrationState As String
+    Dim OpsLog As OpsLoguc
 
     Dim connectionString As String = ConfigurationManager.ConnectionStrings("connectionstring").ConnectionString
     Dim Modalities As controls_ModalityDisplayuc
@@ -17,6 +18,7 @@ Partial Class LinacStatusuc
         AddHandler RegisterUseruc1.ReloadTab, AddressOf PageLoad
         'Added handler so viewfaultsuc1 is reset to cope with nonmachinepage
         AddHandler ViewFaultsuc1.ReloadFaultsTab, AddressOf PageLoad
+        AddHandler OpsLoguc1.ReloadFaultsTab, AddressOf PageLoad
 
     End Sub
     Protected Sub Page_load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -25,6 +27,8 @@ Partial Class LinacStatusuc
         wctrl.LinacName = LinacName
         Dim fltctrl As ViewFaultsuc = CType(FindControl("ViewFaultsuc1"), ViewFaultsuc)
         fltctrl.LinacName = LinacName
+        Dim Opsctrl As OpsLoguc = CType(FindControl("OpsLoguc1"), OpsLoguc)
+        Opsctrl.LinacName = LinacName
         WaitButtons()
 
         Dim adminctrl As Administrationuc = CType(FindControl("Administrationuc1"), Administrationuc)
@@ -113,7 +117,7 @@ Partial Class LinacStatusuc
     End Sub
 
     Private Sub ForceFocus(ByVal ctrl As Control)
-        ScriptManager.RegisterStartupScript(Me, Me.[GetType](), "FocusScript", "setTimeout(function(){$get('" + _
+        ScriptManager.RegisterStartupScript(Me, Me.[GetType](), "FocusScript", "setTimeout(function(){$get('" +
         ctrl.ClientID + "').focus();}, 100);", True)
     End Sub
 
@@ -144,6 +148,16 @@ Partial Class LinacStatusuc
         MultiView1.Visible = True
         MultiView1.SetActiveView(View3)
     End Sub
+
+    Protected Sub HistoryButton_Click(sender As Object, e As EventArgs) Handles HistoryButton.Click
+        Dim Opscon As OpsLoguc
+        Opscon = MultiView1.FindControl("OpsLoguc1")
+        Opscon.Update()
+        HiddenField1.Value = False
+        MultiView1.Visible = True
+        MultiView1.SetActiveView(View4)
+    End Sub
+
     Sub WaitButtons()
         Dim FaultButton As Button = FindControl("FaultButton")
         Dim RegisterButton As Button = FindControl("RegisterButton")
@@ -164,7 +178,5 @@ Partial Class LinacStatusuc
         End If
     End Sub
 
-    Protected Sub HistoryButton_Click(sender As Object, e As EventArgs) Handles HistoryButton.Click
 
-    End Sub
 End Class
