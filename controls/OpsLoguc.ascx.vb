@@ -68,13 +68,13 @@ Partial Class OpsLoguc
             GridView3.PageIndex = 0
             GridView3.DataBind()
             CheckEmptyGrid(GridView3)
-        Else
-            GridView2.DataSource = returntable
-            GridView2.Caption = StringBuilderOps(StartingDate, EndingDate)
-            ''have to set page index before binding data
-            GridView2.PageIndex = 0
-            GridView2.DataBind()
-            CheckEmptyGrid(GridView2)
+            'Else
+            '    GridView2.DataSource = returntable
+            '    GridView2.Caption = StringBuilderOps(StartingDate, EndingDate)
+            '    ''have to set page index before binding data
+            '    GridView2.PageIndex = 0
+            '    GridView2.DataBind()
+            '    CheckEmptyGrid(GridView2)
         End If
         RadioButtonOps.SelectedIndex = -1
 

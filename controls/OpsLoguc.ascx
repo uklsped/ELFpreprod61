@@ -233,7 +233,7 @@ CaptionAlign="Top" >
 </asp:GridView>
 
 
-         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="StateID"
+     <%--    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="StateID"
                         style="top: 670px; left: 10px; height: 162px; width: 617px;" 
                         ForeColor="#333333" GridLines="None" AllowPaging="True"  
            PageSize="20"
@@ -264,7 +264,7 @@ CaptionAlign="Top" >
                         
 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     
-</asp:GridView>
+</asp:GridView>--%>
        
  
 </ContentTemplate>

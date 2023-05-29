@@ -39,14 +39,13 @@ Namespace DavesCode
 
 
         End Function
+        'This mirrors table ReasonDescription And should be replaced by Call To that table
         Public Shared Function ReturnActivity(ByVal activity As String) As String
             Dim Activitydictionary As New Dictionary(Of Integer, String) From {
                 {1, "Engineering Run up"},
-                {2, "Pre-Clinical Run up"},
                 {3, "Clinical"},
                 {4, "Planned Maintenance"},
                 {5, "Repair"},
-                {6, "Physics QA"},
                 {7, "Logged Off"},
                 {8, "Development/Training"},
                 {9, "Emergency Run Up"},
